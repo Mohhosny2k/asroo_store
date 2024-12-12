@@ -1,11 +1,12 @@
 import 'package:asroo_store/core/app/env.variables.dart';
 import 'package:asroo_store/core/common/screen/no_network_screen.dart';
+import 'package:asroo_store/core/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/app/connectivity_controller.dart';
-import 'style/fonts/font_family_helper.dart';
-import 'style/fonts/font_weight_helper.dart';
+import 'core/style/fonts/font_family_helper.dart';
+import 'core/style/fonts/font_weight_helper.dart';
 
 class AsrooStoreApp extends StatelessWidget {
   const AsrooStoreApp({super.key});
@@ -35,45 +36,8 @@ class AsrooStoreApp extends StatelessWidget {
                     }),
                   );
                 },
-                home: Scaffold(
-                  appBar: AppBar(
-                    title: const Text('Asroo Store'),
-                  ),
-                  body: const Center(
-                    child: Column(
-                      children: [
-                        Text(
-                          'محمد حسني ',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w700),
-                        ),
-
-                        Text(
-                          'Test Font Arabic ',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w700),
-                        ),
-
-                        //
-                        Text(
-                          'محمد حسني 2',
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontFamily: FontFamilyHelper.cairoArabic,
-                              fontWeight: FontWeightHelper.bold),
-                        ),
-
-                        Text(
-                          'Test Font Arabic 2 ',
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontFamily: FontFamilyHelper.poppinsEnglish,
-                              fontWeight: FontWeightHelper.bold),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+               initialRoute:AppRoutes.testOne , 
+               onGenerateRoute: AppRoutes.onGenerateRoute,
               ),
             );
           } else {
