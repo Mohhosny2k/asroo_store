@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../core/style/images/app_images.dart';
+import '../images/app_images.dart';
 
 class MyImages extends ThemeExtension< MyImages> {
 const   MyImages({required this.testImage});
