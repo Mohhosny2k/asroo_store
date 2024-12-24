@@ -1,4 +1,5 @@
 import 'package:asroo_store/core/extensions/context_extensions.dart';
+import 'package:asroo_store/core/language/lang_keys.dart';
 import 'package:asroo_store/core/style/images/app_images.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,7 @@ class TestOneScreen extends StatelessWidget {
                   },
                   child: Text('Go Two Screen',
                       style: TextStyle(color: context.color.mainColor)))),
-        
+        Text(context.translate(LangKeys.appName) ,),
         Image.asset(context.assets.testImage!,fit: BoxFit.fill,)
         ],
       ),

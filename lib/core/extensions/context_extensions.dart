@@ -1,5 +1,6 @@
-import 'package:asroo_store/theme/color_extension.dart';
-import 'package:asroo_store/theme/image_extension.dart';
+import 'package:asroo_store/core/language/app_localizations.dart';
+import 'package:asroo_store/core/style/theme/color_extension.dart';
+import 'package:asroo_store/core/style/theme/image_extension.dart';
 import 'package:flutter/material.dart';
 
 extension ContextExt on BuildContext {
@@ -9,7 +10,16 @@ extension ContextExt on BuildContext {
 ///images 
 MyImages get assets => Theme.of(this).extension<MyImages>()!;
 
-//
+//language
+
+String translate(String langKey){
+  return AppLocalizations.of(this)!.translate(langKey)!.toString();
+}
+
+  ///navigation
+  Future<dynamic> push(Widget route) {
+    return Navigator.of(this).push(MaterialPageRoute(builder: (context) => route));
+}
 
   Future<dynamic> pushName(String routeName, {Object? arguments}) {
     return Navigator.of(this).pushNamed(routeName, arguments: arguments);

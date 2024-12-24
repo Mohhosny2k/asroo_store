@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../core/style/colors/colors_dark.dart';
-import '../core/style/colors/colors_light.dart';
+import '../colors/colors_dark.dart';
+import '../colors/colors_light.dart';
 
 class MyColors extends ThemeExtension<MyColors> {
 const  MyColors({required this.mainColor});
