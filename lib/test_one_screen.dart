@@ -26,7 +26,7 @@ class TestOneScreen extends StatelessWidget {
                   child: Text('Go Two Screen',
                       style: TextStyle(color: context.color.mainColor)))),
         Text(context.translate(LangKeys.appName) ,),
-        Image.asset(context.assets.testImage!,fit: BoxFit.fill,)
+     //   Image.asset(context.assets.testImage!,fit: BoxFit.fill,)
         ],
       ),
     );

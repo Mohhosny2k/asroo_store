@@ -11,7 +11,7 @@ class NoNetworkScreen extends StatelessWidget {
         constraints:const BoxConstraints.expand(),
         decoration:const BoxDecoration(
           image: DecorationImage(
-          image: AssetImage(AppImages.network),
+          image: AssetImage(AppImages.noNetwork),
           fit: BoxFit.fill
         )),
       ),
