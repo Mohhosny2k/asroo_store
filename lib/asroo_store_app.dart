@@ -43,7 +43,7 @@ class AsrooStoreApp extends StatelessWidget {
                     ),
                   );
                 },
-               initialRoute:AppRoutes.testOne , 
+               initialRoute:AppRoutes.login , 
                onGenerateRoute: AppRoutes.onGenerateRoute,
               ),
             );
