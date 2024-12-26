@@ -3,17 +3,17 @@ import 'package:asroo_store/core/common/widgets/text_app.dart';
 import 'package:asroo_store/core/extensions/context_extensions.dart';
 import 'package:asroo_store/core/features/auth/presentation/widgets/auth_title_info.dart';
 import 'package:asroo_store/core/features/auth/presentation/widgets/dark_and_lang_button.dart';
-import 'package:asroo_store/core/features/auth/presentation/widgets/login/login_button.dart';
-import 'package:asroo_store/core/features/auth/presentation/widgets/login/login_text_form.dart';
+import 'package:asroo_store/core/features/auth/presentation/widgets/sign_up/sign_up_button.dart';
+import 'package:asroo_store/core/features/auth/presentation/widgets/sign_up/sign_up_text_form.dart';
+import 'package:asroo_store/core/features/auth/presentation/widgets/sign_up/user_avatar_image.dart';
 import 'package:asroo_store/core/language/lang_keys.dart';
 import 'package:asroo_store/core/routes/app_routes.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
-import 'package:asroo_store/core/utils/app_regex.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginBody extends StatelessWidget {
-  const LoginBody({super.key});
+class SignUpBody extends StatelessWidget {
+  const SignUpBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,40 +26,44 @@ class LoginBody extends StatelessWidget {
 
             const DarkAndLangButtons(),
             SizedBox(
-              height: 50.h,
+              height: 30.h,
             ),
             // welcome info
 
             AuthTitleInfo(
-              title: context.translate(LangKeys.login),
-              descrption: context.translate(LangKeys.welcome),
+              title: context.translate(LangKeys.signUp),
+              descrption: context.translate(LangKeys.signUpWelcome),
             ),
             SizedBox(
-              height: 30.h,
+              height: 8.h,
             ),
-
-            //  login textform
-            const LoginTextForm(),
+            // user Avatar image
+            const UserAvatarImage(),
             SizedBox(
-              height: 30.h,
+              height: 20.h,
             ),
 
-            // login button
-            const LoginButton(),
+            //  signup textform
+            const SignUpTextForm(),
             SizedBox(
-              height: 30.h,
+              height: 20.h,
             ),
 
-            // Go to register page
+            // signup button
+            const SignUpButton(),
+            SizedBox(
+              height: 20.h,
+            ),
+            // Go to login page
 
             CustomFadeInDown(
               duration: 400,
               child: TextButton(
                 onPressed: () {
-                  context.pushReplacementNamed(AppRoutes.signUp);
+                  context.pushReplacementNamed(AppRoutes.login);
                 },
                 child: TextApp(
-                  text: context.translate(LangKeys.createAccount),
+                  text: context.translate(LangKeys.youHaveAccount),
                   theme: context.textStyle.copyWith(
                       fontSize: 16.sp,
                       color: context.color.bluePinkLight,
