@@ -10,15 +10,15 @@ environment:
   sdk: ^3.5.3
 
 dependencies:
+  animate_do: ^3.3.4
   connectivity_plus: ^6.1.0
   cupertino_icons: ^1.0.8
   firebase_core: ^3.8.0
   flutter:
     sdk: flutter
+  flutter_dotenv: ^5.2.1
   flutter_localizations:
     sdk: flutter
-
-  flutter_dotenv: ^5.2.1
   flutter_native_splash: ^2.4.3
   flutter_screenutil: ^5.9.3
 
@@ -46,9 +46,12 @@ flutter:
     - .env.prod
     - lang/ar.json
     - lang/en.json
-  
+    - assets/images/admin/
+    - assets/images/customer/
+    - assets/svg/
+
   fonts:
-  # Arabic font
+    # Arabic font
     - family: Cairo
       fonts:
         - asset: assets/fonts/arabic/cairo/Cairo-Bold.ttf
@@ -58,7 +61,7 @@ flutter:
         - asset: assets/fonts/arabic/cairo/Cairo-Regular.ttf
           weight: 400
 
- # English font
+    # English font
     - family: Poppins
       fonts:
         - asset: assets/fonts/english/poppins/Poppins-Bold.ttf
@@ -67,4 +70,3 @@ flutter:
           weight: 500
         - asset: assets/fonts/english/poppins/Poppins-Regular.ttf
           weight: 400
- 
