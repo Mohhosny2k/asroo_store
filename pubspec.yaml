@@ -8,7 +8,7 @@ version: 1.0.0+1
 
 environment:
   sdk: ^3.5.3
-
+ #? dart run build_runner build --delete-conflicting-outputs 
 dependencies:
   animate_do: ^3.3.4
   connectivity_plus: ^6.1.0
