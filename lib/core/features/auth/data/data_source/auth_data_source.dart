@@ -1,8 +1,8 @@
-import 'package:asroo_store/core/features/auth/data/models/login_request_body.dart';
-import 'package:asroo_store/core/features/auth/data/models/login_response.dart';
-import 'package:asroo_store/core/features/auth/data/models/user_role_response.dart';
-import 'package:asroo_store/core/service/graphql/api_service.dart';
-import 'package:asroo_store/core/service/graphql/qraphql_queries/auth/auth_queries.dart';
+import '../models/login_request_body.dart';
+import '../models/login_response.dart';
+import '../models/user_role_response.dart';
+import '../../../../service/graphql/api_service.dart';
+import '../../../../service/graphql/qraphql_queries/auth/auth_queries.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 

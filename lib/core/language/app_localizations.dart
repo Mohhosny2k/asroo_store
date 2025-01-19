@@ -1,6 +1,6 @@
 import 'dart:convert' show json;
 
-import 'package:asroo_store/core/language/app_localizations_delegate.dart';
+import 'app_localizations_delegate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

@@ -1,5 +1,5 @@
-import 'package:asroo_store/core/features/auth/data/models/login_response.dart';
-import 'package:asroo_store/core/features/auth/data/models/user_role_response.dart';
+import '../../features/auth/data/models/login_response.dart';
+import '../../features/auth/data/models/user_role_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 

@@ -1,10 +1,10 @@
-import 'package:asroo_store/core/features/auth/data/data_source/auth_data_source.dart';
-import 'package:asroo_store/core/features/auth/data/models/login_request_body.dart';
-import 'package:asroo_store/core/features/auth/data/models/login_response.dart';
-import 'package:asroo_store/core/features/auth/data/models/user_role_response.dart';
-import 'package:asroo_store/core/language/lang_keys.dart';
-import 'package:asroo_store/core/service/graphql/api_result.dart';
-import 'package:asroo_store/core/utils/app_strings.dart';
+import '../data_source/auth_data_source.dart';
+import '../models/login_request_body.dart';
+import '../models/login_response.dart';
+import '../models/user_role_response.dart';
+import '../../../../language/lang_keys.dart';
+import '../../../../service/graphql/api_result.dart';
+import '../../../../utils/app_strings.dart';
 
 class AuthRepos {
   const AuthRepos(this._dataSource);

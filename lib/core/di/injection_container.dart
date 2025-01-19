@@ -1,9 +1,9 @@
-import 'package:asroo_store/core/app/app_cubit/app_cubit.dart';
-import 'package:asroo_store/core/features/auth/data/data_source/auth_data_source.dart';
-import 'package:asroo_store/core/features/auth/data/repos/auth_repo.dart';
-import 'package:asroo_store/core/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:asroo_store/core/service/graphql/api_service.dart';
-import 'package:asroo_store/core/service/graphql/dio_factory.dart';
+import '../app/app_cubit/app_cubit.dart';
+import '../features/auth/data/data_source/auth_data_source.dart';
+import '../features/auth/data/repos/auth_repo.dart';
+import '../features/auth/presentation/bloc/auth_bloc.dart';
+import '../service/graphql/api_service.dart';
+import '../service/graphql/dio_factory.dart';
 import 'package:get_it/get_it.dart';
 
 final sl = GetIt.instance;

@@ -1,6 +1,6 @@
-import 'package:asroo_store/core/extensions/context_extensions.dart';
-import 'package:asroo_store/core/features/auth/presentation/refactors/auth_custom_painter.dart';
-import 'package:asroo_store/core/features/auth/presentation/refactors/sign_up_body.dart';
+import '../../../../extensions/context_extensions.dart';
+import '../refactors/auth_custom_painter.dart';
+import '../refactors/sign_up_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

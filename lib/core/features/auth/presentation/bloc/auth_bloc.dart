@@ -1,8 +1,8 @@
 import 'dart:async';
-import 'package:asroo_store/core/features/auth/data/models/login_request_body.dart';
-import 'package:asroo_store/core/features/auth/data/repos/auth_repo.dart';
-import 'package:asroo_store/core/service/shared_pref/pref_keys.dart';
-import 'package:asroo_store/core/service/shared_pref/shared_pref.dart';
+import '../../data/models/login_request_body.dart';
+import '../../data/repos/auth_repo.dart';
+import '../../../../service/shared_pref/pref_keys.dart';
+import '../../../../service/shared_pref/shared_pref.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import "package:flutter_bloc/flutter_bloc.dart";

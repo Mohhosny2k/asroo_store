@@ -1,4 +1,4 @@
-import 'package:asroo_store/core/features/auth/data/models/login_request_body.dart';
+import '../../../../features/auth/data/models/login_request_body.dart';
 
 class AuthQueries {
   const AuthQueries._();
