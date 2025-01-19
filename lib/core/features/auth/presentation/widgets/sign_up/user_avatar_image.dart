@@ -1,4 +1,4 @@
-import 'package:asroo_store/core/common/animations/animate_do.dart';
+import '../../../../../common/animations/animate_do.dart';
 import 'package:flutter/material.dart';
 
 class UserAvatarImage extends StatelessWidget {

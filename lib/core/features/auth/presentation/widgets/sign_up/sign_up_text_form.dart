@@ -1,8 +1,8 @@
-import 'package:asroo_store/core/common/animations/animate_do.dart';
-import 'package:asroo_store/core/common/widgets/custom_text_field.dart';
-import 'package:asroo_store/core/extensions/context_extensions.dart';
-import 'package:asroo_store/core/language/lang_keys.dart';
-import 'package:asroo_store/core/utils/app_regex.dart';
+import '../../../../../common/animations/animate_do.dart';
+import '../../../../../common/widgets/custom_text_field.dart';
+import '../../../../../extensions/context_extensions.dart';
+import '../../../../../language/lang_keys.dart';
+import '../../../../../utils/app_regex.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

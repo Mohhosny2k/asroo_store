@@ -1,4 +1,4 @@
-import 'package:asroo_store/core/language/app_localizations.dart';
+import 'app_localizations.dart';
 import 'package:flutter/material.dart' show Locale, LocalizationsDelegate;
 
 // Defining a custom LocalizationsDelegate for AppLocalizations.

@@ -1,6 +1,6 @@
-import 'package:asroo_store/core/language/app_localizations.dart';
-import 'package:asroo_store/core/style/theme/assets_extension.dart';
-import 'package:asroo_store/core/style/theme/color_extension.dart';
+import '../language/app_localizations.dart';
+import '../style/theme/assets_extension.dart';
+import '../style/theme/color_extension.dart';
 import 'package:flutter/material.dart';
 
 

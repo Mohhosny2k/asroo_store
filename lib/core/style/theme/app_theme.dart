@@ -1,6 +1,6 @@
-import 'package:asroo_store/core/style/colors/colors_dark.dart';
-import 'package:asroo_store/core/style/colors/colors_light.dart';
-import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
+import '../colors/colors_dark.dart';
+import '../colors/colors_light.dart';
+import '../fonts/font_family_helper.dart';
 import 'package:flutter/material.dart';
 
 import 'color_extension.dart';

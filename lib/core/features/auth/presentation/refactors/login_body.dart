@@ -1,14 +1,14 @@
-import 'package:asroo_store/core/common/animations/animate_do.dart';
-import 'package:asroo_store/core/common/widgets/text_app.dart';
-import 'package:asroo_store/core/extensions/context_extensions.dart';
-import 'package:asroo_store/core/features/auth/presentation/widgets/auth_title_info.dart';
-import 'package:asroo_store/core/features/auth/presentation/widgets/dark_and_lang_button.dart';
-import 'package:asroo_store/core/features/auth/presentation/widgets/login/login_button.dart';
-import 'package:asroo_store/core/features/auth/presentation/widgets/login/login_text_form.dart';
-import 'package:asroo_store/core/language/lang_keys.dart';
-import 'package:asroo_store/core/routes/app_routes.dart';
-import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
-import 'package:asroo_store/core/utils/app_regex.dart';
+import '../../../../common/animations/animate_do.dart';
+import '../../../../common/widgets/text_app.dart';
+import '../../../../extensions/context_extensions.dart';
+import '../widgets/auth_title_info.dart';
+import '../widgets/dark_and_lang_button.dart';
+import '../widgets/login/login_button.dart';
+import '../widgets/login/login_text_form.dart';
+import '../../../../language/lang_keys.dart';
+import '../../../../routes/app_routes.dart';
+import '../../../../style/fonts/font_weight_helper.dart';
+import '../../../../utils/app_regex.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

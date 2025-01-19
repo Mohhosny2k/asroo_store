@@ -1,12 +1,12 @@
-import 'package:asroo_store/core/app/app_cubit/app_cubit.dart';
-import 'package:asroo_store/core/app/env.variables.dart';
-import 'package:asroo_store/core/common/screen/no_network_screen.dart';
-import 'package:asroo_store/core/di/injection_container.dart';
-import 'package:asroo_store/core/language/app_localizations_setup.dart';
-import 'package:asroo_store/core/routes/app_routes.dart';
-import 'package:asroo_store/core/service/shared_pref/pref_keys.dart';
-import 'package:asroo_store/core/service/shared_pref/shared_pref.dart';
-import 'package:asroo_store/core/style/theme/app_theme.dart';
+import 'core/app/app_cubit/app_cubit.dart';
+import 'core/app/env.variables.dart';
+import 'core/common/screen/no_network_screen.dart';
+import 'core/di/injection_container.dart';
+import 'core/language/app_localizations_setup.dart';
+import 'core/routes/app_routes.dart';
+import 'core/service/shared_pref/pref_keys.dart';
+import 'core/service/shared_pref/shared_pref.dart';
+import 'core/style/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -64,8 +64,8 @@ class AsrooStoreApp extends StatelessWidget {
                           ),
                         );
                       },
-                      initialRoute: AppRoutes.login,
-                      onGenerateRoute: AppRoutes.onGenerateRoute,
+                      initialRoute:SharedPref().getString( PrefKeys.accessToken)!= null ?SharedPref().getString( PrefKeys.userRole) == 'admin' ?   AppRoutes.homeCustomer : AppRoutes.homeAdmin : AppRoutes.login,
+                      onGenerateRoute:  AppRoutes.onGenerateRoute,
                     );
                   },
                 ),
