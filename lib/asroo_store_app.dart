@@ -41,6 +41,7 @@ class AsrooStoreApp extends StatelessWidget {
                     final cubit = context.read<AppCubit>();
                     return MaterialApp(
                       title: 'Asroo Store',
+                      navigatorKey: sl<GlobalKey<NavigatorState>>(),
                       debugShowCheckedModeBanner:
                           EnvVariable.instance.debugMode,
                       theme: cubit.isDark ? themeLight() :themeDark() ,

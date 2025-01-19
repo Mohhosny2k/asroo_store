@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import '../app/app_cubit/app_cubit.dart';
 import '../features/auth/data/data_source/auth_data_source.dart';
 import '../features/auth/data/repos/auth_repo.dart';
@@ -21,13 +23,16 @@ Future<void> setupInjector() async {
 
 Future<void> _initCore() async {
   final dio = DioFactory.getDio();
-  sl.registerLazySingleton(AppCubit.new);
-  sl.registerLazySingleton<ApiService>(() => ApiService(dio));
+  final navigatorKey = GlobalKey<NavigatorState>();
+  sl..registerLazySingleton(AppCubit.new)
+  ..registerLazySingleton<ApiService>(() => ApiService(dio))
+  ..registerSingleton<GlobalKey<NavigatorState>>(navigatorKey);
 }
 
 Future<void> _initAuth() async {
   sl
     ..registerFactory(() => AuthBloc(sl()))
     ..registerLazySingleton(() => AuthRepos(sl()))
-    ..registerLazySingleton(() => AuthDataSource(sl()));
+    ..registerLazySingleton(() => AuthDataSource(sl()))
+    ;
 }
