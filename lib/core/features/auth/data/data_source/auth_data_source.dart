@@ -25,7 +25,7 @@ const  AuthDataSource(
     final dio = Dio();
     dio.options.headers['Authorization']= 'Bearer $token';
     final client= ApiService(dio);
-    final response=await client.userRole({});
+    final response=await client.userRole();
     debugPrint('userRoleResponse: ${response.userRole}');
     return  response;
   }

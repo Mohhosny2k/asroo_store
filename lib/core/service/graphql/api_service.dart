@@ -1,3 +1,4 @@
+import 'package:asroo_store/core/app/upload_image/model/upload_image_response.dart';
 import '../../features/auth/data/models/login_response.dart';
 import '../../features/auth/data/models/user_role_response.dart';
 import 'package:dio/dio.dart';
@@ -8,7 +9,6 @@ part 'api_service.g.dart';
 const String baseUrl = 'https://api.escuelajs.co';
 const String graphql = '/graphql';
 
-//https://api.escuelajs.co/api/v1/auth/profile
 @RestApi(baseUrl: baseUrl)
 abstract class ApiService {
   factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
@@ -18,14 +18,113 @@ abstract class ApiService {
     @Body() Map<String, dynamic> mutation,
   );
 
-  @GET('api.escuelajs.co/api/v1/auth/profile')
-//   /// user
-//   ///
-//   /// - [mutation]
-//   ///   - variables: { "id": int }
-//   ///   - query: user(id: $id) { id, name, email, role }
+  @GET('/api/v1/auth/profile')
+  Future<UserRoleResponse> userRole();
 
-  Future<UserRoleResponse> userRole(
-    @Body() Map<String, dynamic> getUserRole ,
+  @POST('/api/v1/files/upload')
+  Future<UploadImageResourse> uploadImage(
+    @Body() FormData file,
   );
+
+  // @POST(graphql)
+  // Future<SignUpResponse> signUp(
+  //   @Body() Map<String, dynamic> mutation,
+  // );
+
+  // @POST(graphql)
+  // Future<ProductsNumberResponse> numberOfProducts(
+  //   @Body() Map<String, dynamic> query,
+  // );
+
+  // @POST(graphql)
+  // Future<CategoriesNumberResponse> numberOfCategories(
+  //   @Body() Map<String, dynamic> query,
+  // );
+
+  // @POST(graphql)
+  // Future<UsersNumberResponse> numberOfUsers(
+  //   @Body() Map<String, dynamic> query,
+  // );
+
+  // @POST(graphql)
+  // Future<CategoriesGetAllResponse> getAllCategories(
+  //   @Body() Map<String, dynamic> query,
+  // );
+
+  // @POST(graphql)
+  // Future<CreateCategoryResponse> createCategory(
+  //   @Body() Map<String, dynamic> mutation,
+  // );
+
+  // @POST(graphql)
+  // Future<void> deleteCategory(
+  //   @Body() Map<String, dynamic> mutation,
+  // );
+
+  // @POST(graphql)
+  // Future<void> updateCategory(
+  //   @Body() Map<String, dynamic> mutation,
+  // );
+
+  // @POST(graphql)
+  // Future<GetAllProductResponse> getAllProduct(
+  //   @Body() Map<String, dynamic> query,
+  // );
+
+  // @POST(graphql)
+  // Future<void> createProduct(
+  //   @Body() Map<String, dynamic> mutation,
+  // );
+
+  // @POST(graphql)
+  // Future<void> deleteProduct(
+  //   @Body() Map<String, dynamic> mutation,
+  // );
+
+  // @POST(graphql)
+  // Future<void> updateProduct(
+  //   @Body() Map<String, dynamic> mutation,
+  // );
+
+  // @POST(graphql)
+  // Future<GetAllUsersResponse> getAllUsers(
+  //   @Body() Map<String, dynamic> query,
+  // );
+
+  // @POST(graphql)
+  // Future<void> deleteUser(
+  //   @Body() Map<String, dynamic> mutation,
+  // );
+
+  // @POST(graphql)
+  // Future<BannersResponse> getBanners(
+  //   @Body() Map<String, dynamic> query,
+  // );
+
+  // @POST(graphql)
+  // Future<ProductDetailsResponse> productDetails(
+  //   @Body() Map<String, dynamic> query,
+  // );
+
+  // @POST(graphql)
+  // Future<GetAllProductResponse> getCategory(
+  //   @Body() Map<String, dynamic> query,
+  // );
+
+  // @POST(graphql)
+  // Future<GetAllProductResponse> getProductsViewAll(
+  //   @Body() Map<String, dynamic> query,
+  // );
+
+  // @POST(graphql)
+  // Future<GetAllProductResponse> searchProduct(
+  //   @Body() Map<String, dynamic> query,
+  // );
 }
+
+
+//   /// user
+  //   ///
+  //   /// - [mutation]
+  //   ///   - variables: { "id": int }
+  //   ///   - query: user(id: $id) { id, name, email, role }
