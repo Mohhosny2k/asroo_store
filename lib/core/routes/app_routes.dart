@@ -1,3 +1,5 @@
+import 'package:asroo_store/core/app/upload_image/cubit/upload_image_cubit.dart';
+
 import '../common/screen/under_build_screen.dart';
 import '../di/injection_container.dart';
 import '../features/admin/home_admin.dart';
@@ -28,7 +30,12 @@ class AppRoutes {
           child: const LoginScreen(),
         ));
       case signUp:
-        return BaseRoute(page: const SignUpScreen());
+        return BaseRoute(page: MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (context) => sl<UploadImageCubit>())
+          ],
+          
+          child: const SignUpScreen()));
            case homeAdmin:
         return BaseRoute(page: const HomeAdminScreen());
            case homeCustomer:

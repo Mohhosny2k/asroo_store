@@ -1,3 +1,6 @@
+import 'package:asroo_store/core/app/upload_image/cubit/upload_image_cubit.dart';
+import 'package:asroo_store/core/app/upload_image/data_source/upload_image_data_source.dart';
+import 'package:asroo_store/core/app/upload_image/repo/upload_image_repo.dart';
 import 'package:flutter/material.dart';
 
 import '../app/app_cubit/app_cubit.dart';
@@ -26,7 +29,12 @@ Future<void> _initCore() async {
   final navigatorKey = GlobalKey<NavigatorState>();
   sl..registerLazySingleton(AppCubit.new)
   ..registerLazySingleton<ApiService>(() => ApiService(dio))
-  ..registerSingleton<GlobalKey<NavigatorState>>(navigatorKey);
+  ..registerSingleton<GlobalKey<NavigatorState>>(navigatorKey)
+  .. registerFactory(()=> UploadImageCubit(sl()) )
+  .. registerLazySingleton(() => UploadImageRepo(sl()))
+  ..registerLazySingleton(() => UploadImageDataSource(sl()))
+  
+  ;
 }
 
 Future<void> _initAuth() async {
