@@ -15,7 +15,7 @@ class PickImageutils {
     try {
       final pickedFile = await ImagePicker().pickImage(
         source: ImageSource.gallery,
-        //imageQuality: 50,
+      //imageQuality: 10,
       );
       if (pickedFile != null) {
         return XFile(pickedFile.path);
