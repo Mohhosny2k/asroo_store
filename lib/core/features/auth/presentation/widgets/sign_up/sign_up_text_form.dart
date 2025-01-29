@@ -1,9 +1,11 @@
-import '../../../../../common/animations/animate_do.dart';
-import '../../../../../common/widgets/custom_text_field.dart';
-import '../../../../../extensions/context_extensions.dart';
-import '../../../../../language/lang_keys.dart';
-import '../../../../../utils/app_regex.dart';
+import 'package:asroo_store/core/common/animations/animate_do.dart';
+import 'package:asroo_store/core/common/widgets/custom_text_field.dart';
+import 'package:asroo_store/core/extensions/context_extensions.dart';
+import 'package:asroo_store/core/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:asroo_store/core/language/lang_keys.dart';
+import 'package:asroo_store/core/utils/app_regex.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignUpTextForm extends StatefulWidget {
@@ -14,73 +16,88 @@ class SignUpTextForm extends StatefulWidget {
 }
 
 class _SignUpTextFormState extends State<SignUpTextForm> {
-    bool isShowPassword = true;
+  bool isShowPassword = true;
+
+  late AuthBloc _bloc;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _bloc = context.read<AuthBloc>();
+  }
+
+  @override
+  void dispose() {
+    _bloc.nameController.dispose();
+    _bloc.emailController.dispose();
+    _bloc.passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-   return Form(
+    return Form(
+      key: _bloc.formKey,
       child: Column(
         children: [
-          // name
+          //Name
           CustomFadeInRight(
             duration: 200,
             child: CustomTextField(
+              controller: _bloc.nameController,
+              hintText: context.translate(LangKeys.fullName),
+              keyboardType: TextInputType.emailAddress,
               validator: (value) {
                 if (value == null || value.isEmpty || value.length < 4) {
                   return context.translate(LangKeys.validName);
                 }
-                return value;
+                return null;
               },
-              keyboardType: TextInputType.name,
-              controller: TextEditingController(),
-              hintText: context.translate(LangKeys.fullName),
             ),
           ),
-          SizedBox(
-            height: 25.h,
-          ),
-          // email
+          SizedBox(height: 25.h),
+          //Email
           CustomFadeInRight(
             duration: 200,
             child: CustomTextField(
+              controller: _bloc.emailController,
+              hintText: context.translate(LangKeys.email),
+              keyboardType: TextInputType.emailAddress,
               validator: (value) {
-                if (!AppRegex.isEmailValid('')) {
+                if (!AppRegex.isEmailValid(_bloc.emailController.text)) {
                   return context.translate(LangKeys.validEmail);
                 }
-                return value;
+                return null;
               },
-              keyboardType: TextInputType.emailAddress,
-              controller: TextEditingController(),
-              hintText: context.translate(LangKeys.email),
             ),
           ),
-          SizedBox(
-            height: 25.h,
-          ),
-          // password
-
+          SizedBox(height: 25.h),
+          //Password
           CustomFadeInRight(
             duration: 200,
             child: CustomTextField(
+              controller: _bloc.passwordController,
+              hintText: context.translate(LangKeys.password),
+              keyboardType: TextInputType.visiblePassword,
+              obscureText: isShowPassword,
               validator: (value) {
                 if (value == null || value.isEmpty || value.length < 6) {
                   return context.translate(LangKeys.validPasswrod);
                 }
-                return value;
+                return null;
               },
-              keyboardType: TextInputType.visiblePassword,
-              controller: TextEditingController(),
-              hintText: context.translate(LangKeys.password),
-              obscureText: isShowPassword,
               suffixIcon: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      isShowPassword = !isShowPassword;
-                    });
-                  },
-                  icon:  Icon(
-                   isShowPassword ? Icons.visibility_off : Icons.visibility,
-                    color: context.color.textColor,
-                  )),
+                onPressed: () {
+                  setState(() {
+                    isShowPassword = !isShowPassword;
+                  });
+                },
+                icon: Icon(
+                  isShowPassword ? Icons.visibility_off : Icons.visibility,
+                  color: context.color.textColor,
+                ),
+              ),
             ),
           ),
         ],

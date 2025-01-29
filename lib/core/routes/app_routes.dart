@@ -32,7 +32,8 @@ class AppRoutes {
       case signUp:
         return BaseRoute(page: MultiBlocProvider(
           providers: [
-            BlocProvider(create: (context) => sl<UploadImageCubit>())
+            BlocProvider(create: (context) => sl<UploadImageCubit>()),
+            BlocProvider(create: (context) => sl<AuthBloc>()),
           ],
           
           child: const SignUpScreen()));
