@@ -1,12 +1,12 @@
-import '../../../../../common/animations/animate_do.dart';
-import '../../../../../common/toast/show_toast.dart';
-import '../../../../../common/widgets/custom_linear_button.dart';
-import '../../../../../common/widgets/text_app.dart';
-import '../../../../../extensions/context_extensions.dart';
-import '../../bloc/auth_bloc.dart';
-import '../../../../../language/lang_keys.dart';
-import '../../../../../routes/app_routes.dart';
-import '../../../../../style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/core/common/animations/animate_do.dart';
+import 'package:asroo_store/core/common/toast/show_toast.dart';
+import 'package:asroo_store/core/common/widgets/custom_linear_button.dart';
+import 'package:asroo_store/core/common/widgets/text_app.dart';
+import 'package:asroo_store/core/extensions/context_extensions.dart';
+import 'package:asroo_store/core/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:asroo_store/core/language/lang_keys.dart';
+import 'package:asroo_store/core/routes/app_routes.dart';
+import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,36 +20,31 @@ class LoginButton extends StatelessWidget {
       duration: 600,
       child: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
-          state.whenOrNull(success: (userRole) {
-            ShowToast.showToastSuccessTop(
-              context: context,
-              message: context.translate(LangKeys.loggedSuccessfully),
-              // seconds: 3,
-            );
-            if (userRole == 'admin') {
-              context.pushNamedAndRemoveUntil(
-                AppRoutes.homeAdmin,
+          state.whenOrNull(
+            success: (userRole) {
+              ShowToast.showToastSuccessTop(
+                message: context.translate(LangKeys.loggedSuccessfully),
               );
-            } else {
-              context.pushNamedAndRemoveUntil(
-                AppRoutes.homeCustomer,
+              if (userRole == 'admin') {
+                context.pushNamedAndRemoveUntil(AppRoutes.homeAdmin);
+              } else {
+                context.pushNamedAndRemoveUntil(AppRoutes.homeCustomer);
+              }
+            },
+            error: (messsage) {
+              ShowToast.showToastErrorTop(
+                message: context.translate(messsage),
               );
-            }
-          }, error: (error) {
-            ShowToast.showToastErrorTop(
-              context: context,
-              message: context.translate(error),
-              // seconds: 3,
-            );
-          });
+            },
+          );
         },
         builder: (context, state) {
           return state.maybeWhen(
             loading: () {
               return CustomLinearButton(
+                onPressed: () {},
                 height: 50.h,
                 width: MediaQuery.of(context).size.width,
-                onPressed: () {},
                 child: const CircularProgressIndicator(
                   color: Colors.white,
                 ),
@@ -57,15 +52,17 @@ class LoginButton extends StatelessWidget {
             },
             orElse: () {
               return CustomLinearButton(
-                height: 50.h,
-                width: MediaQuery.of(context).size.width,
                 onPressed: () {
                   _validateThenDoLogin(context);
                 },
+                height: 50.h,
+                width: MediaQuery.of(context).size.width,
                 child: TextApp(
                   text: context.translate(LangKeys.login),
                   theme: context.textStyle.copyWith(
-                      fontSize: 18.sp, fontWeight: FontWeightHelper.bold),
+                    fontSize: 18.sp,
+                    fontWeight: FontWeightHelper.bold,
+                  ),
                 ),
               );
             },

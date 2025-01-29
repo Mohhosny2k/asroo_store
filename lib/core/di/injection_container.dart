@@ -1,3 +1,8 @@
+import 'package:asroo_store/core/app/upload_image/cubit/upload_image_cubit.dart';
+import 'package:asroo_store/core/app/upload_image/data_source/upload_image_data_source.dart';
+import 'package:asroo_store/core/app/upload_image/repo/upload_image_repo.dart';
+import 'package:flutter/material.dart';
+
 import '../app/app_cubit/app_cubit.dart';
 import '../features/auth/data/data_source/auth_data_source.dart';
 import '../features/auth/data/repos/auth_repo.dart';
@@ -21,13 +26,21 @@ Future<void> setupInjector() async {
 
 Future<void> _initCore() async {
   final dio = DioFactory.getDio();
-  sl.registerLazySingleton(AppCubit.new);
-  sl.registerLazySingleton<ApiService>(() => ApiService(dio));
+  final navigatorKey = GlobalKey<NavigatorState>();
+  sl..registerLazySingleton(AppCubit.new)
+  ..registerLazySingleton<ApiService>(() => ApiService(dio))
+  ..registerSingleton<GlobalKey<NavigatorState>>(navigatorKey)
+  .. registerFactory(()=> UploadImageCubit(sl()) )
+  .. registerLazySingleton(() => UploadImageRepo(sl()))
+  ..registerLazySingleton(() => UploadImageDataSource(sl()))
+  
+  ;
 }
 
 Future<void> _initAuth() async {
   sl
     ..registerFactory(() => AuthBloc(sl()))
     ..registerLazySingleton(() => AuthRepos(sl()))
-    ..registerLazySingleton(() => AuthDataSource(sl()));
+    ..registerLazySingleton(() => AuthDataSource(sl()))
+    ;
 }

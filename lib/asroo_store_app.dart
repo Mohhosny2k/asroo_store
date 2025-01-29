@@ -41,6 +41,7 @@ class AsrooStoreApp extends StatelessWidget {
                     final cubit = context.read<AppCubit>();
                     return MaterialApp(
                       title: 'Asroo Store',
+                      navigatorKey: sl<GlobalKey<NavigatorState>>(),
                       debugShowCheckedModeBanner:
                           EnvVariable.instance.debugMode,
                       theme: cubit.isDark ? themeLight() :themeDark() ,
@@ -64,7 +65,7 @@ class AsrooStoreApp extends StatelessWidget {
                           ),
                         );
                       },
-                      initialRoute:SharedPref().getString( PrefKeys.accessToken)!= null ?SharedPref().getString( PrefKeys.userRole) == 'admin' ?   AppRoutes.homeCustomer : AppRoutes.homeAdmin : AppRoutes.login,
+                      initialRoute:SharedPref().getString( PrefKeys.accessToken)!= null ?SharedPref().getString( PrefKeys.userRole) != 'admin' ?   AppRoutes.homeCustomer : AppRoutes.homeAdmin : AppRoutes.login,
                       onGenerateRoute:  AppRoutes.onGenerateRoute,
                     );
                   },
