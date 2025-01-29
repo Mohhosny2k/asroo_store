@@ -11,6 +11,7 @@ environment:
 #? dart run build_runner build --delete-conflicting-outputs
 dependencies:
   animate_do: ^3.3.4
+  cloud_firestore: ^5.6.2
   connectivity_plus: ^6.1.0
   cupertino_icons: ^1.0.8
   dio: ^5.7.0
