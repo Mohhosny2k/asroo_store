@@ -4,9 +4,9 @@ import 'package:asroo_store/core/app/upload_image/repo/upload_image_repo.dart';
 import 'package:flutter/material.dart';
 
 import '../app/app_cubit/app_cubit.dart';
-import '../features/auth/data/data_source/auth_data_source.dart';
-import '../features/auth/data/repos/auth_repo.dart';
-import '../features/auth/presentation/bloc/auth_bloc.dart';
+import '../../features/auth/data/data_source/auth_data_source.dart';
+import '../../features/auth/data/repos/auth_repo.dart';
+import '../../features/auth/presentation/bloc/auth_bloc.dart';
 import '../service/graphql/api_service.dart';
 import '../service/graphql/dio_factory.dart';
 import 'package:get_it/get_it.dart';
