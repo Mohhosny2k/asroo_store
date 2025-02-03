@@ -1,6 +1,6 @@
-import 'package:asroo_store/core/app/upload_image/data_source/upload_image_data_source.dart';
-import 'package:asroo_store/core/app/upload_image/model/upload_image_response.dart';
-import 'package:asroo_store/core/service/graphql/api_result.dart';
+import '../data_source/upload_image_data_source.dart';
+import '../model/upload_image_response.dart';
+import '../../../service/graphql/api_result.dart';
 import 'package:image_picker/image_picker.dart';
 
 class UploadImageRepo {

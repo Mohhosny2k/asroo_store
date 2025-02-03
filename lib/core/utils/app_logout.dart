@@ -1,8 +1,8 @@
-import 'package:asroo_store/core/di/injection_container.dart';
-import 'package:asroo_store/core/extensions/context_extensions.dart';
-import 'package:asroo_store/core/routes/app_routes.dart';
-import 'package:asroo_store/core/service/shared_pref/pref_keys.dart';
-import 'package:asroo_store/core/service/shared_pref/shared_pref.dart';
+import '../di/injection_container.dart';
+import '../extensions/context_extensions.dart';
+import '../routes/app_routes.dart';
+import '../service/shared_pref/pref_keys.dart';
+import '../service/shared_pref/shared_pref.dart';
 import 'package:flutter/widgets.dart';
 
 class AppLogout {

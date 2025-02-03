@@ -1,5 +1,5 @@
-import 'package:asroo_store/core/app/upload_image/repo/upload_image_repo.dart';
-import 'package:asroo_store/core/utils/image_pic.dart';
+import '../repo/upload_image_repo.dart';
+import '../../../utils/image_pic.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 part 'upload_image_state.dart';

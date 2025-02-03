@@ -1,8 +1,8 @@
-import 'package:asroo_store/core/common/widgets/admin_app_bar.dart';
-import 'package:asroo_store/features/admin/dashboard/presentation/screens/dashboard_screen.dart';
-import 'package:asroo_store/core/style/colors/colors_dark.dart';
-import 'package:asroo_store/core/style/images/app_images.dart';
-import 'package:asroo_store/core/utils/admin_drawer_list.dart';
+import '../../../../../core/common/widgets/admin_app_bar.dart';
+import '../../../dashboard/presentation/screens/dashboard_screen.dart';
+import '../../../../../core/style/colors/colors_dark.dart';
+import '../../../../../core/style/images/app_images.dart';
+import '../../../../../core/utils/admin_drawer_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 

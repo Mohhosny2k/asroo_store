@@ -1,7 +1,7 @@
-import 'package:asroo_store/core/common/widgets/text_app.dart';
-import 'package:asroo_store/core/extensions/context_extensions.dart';
-import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
-import 'package:asroo_store/core/style/images/app_images.dart';
+import '../widgets/text_app.dart';
+import '../../extensions/context_extensions.dart';
+import '../../style/fonts/font_weight_helper.dart';
+import '../../style/images/app_images.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

@@ -1,4 +1,4 @@
-import 'package:asroo_store/core/di/injection_container.dart';
+import '../di/injection_container.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';

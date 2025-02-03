@@ -1,5 +1,5 @@
-import 'package:asroo_store/core/app/upload_image/model/upload_image_response.dart';
-import 'package:asroo_store/core/service/graphql/api_service.dart';
+import '../model/upload_image_response.dart';
+import '../../../service/graphql/api_service.dart';
 import 'package:dio/dio.dart';
 import 'package:image_picker/image_picker.dart';
 

@@ -1,5 +1,5 @@
-import 'package:asroo_store/core/common/widgets/admin_app_bar.dart';
-import 'package:asroo_store/core/style/colors/colors_dark.dart';
+import '../../../../../core/common/widgets/admin_app_bar.dart';
+import '../../../../../core/style/colors/colors_dark.dart';
 import 'package:flutter/material.dart';
 
 class AddNotificationsScreen extends StatelessWidget {
