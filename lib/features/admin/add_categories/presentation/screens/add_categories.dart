@@ -1,4 +1,7 @@
+import 'package:asroo_store/core/di/injection_container.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/refactors/add_categories_body.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/common/widgets/admin_app_bar.dart';
 import '../../../../../core/style/colors/colors_dark.dart';
 
@@ -7,14 +10,34 @@ class AddCategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: ColorsDark.mainColor,
-      appBar: AdminAppBar(
-        title: 'Add Categories',
-        isMain: true,
+   return 
+  //  MultiBlocProvider(
+  //     providers: [
+        // BlocProvider(
+        //   create: (context) => sl<GetAllAdminCategoriesBloc>()
+        //     ..add(
+        //       const GetAllAdminCategoriesEvent.fetchAdminCategories(
+        //         isNotLoading: true,
+        //       ),
+        //     ),
+        // ),
+        // BlocProvider(
+        //   create: (context) => sl<DeleteCategoryBloc>(),
+        // ),
+     // ],
+     // child:
+      
+       const Scaffold(
         backgroundColor: ColorsDark.mainColor,
-      ),
-      body: Center(child: Text('Add Categories Screen')),
-    );
+        appBar: AdminAppBar(
+          title: 'Categories',
+          isMain: true,
+          backgroundColor: ColorsDark.mainColor,
+        ),
+        body: AddCategoriesBody(),
+      )
+      ;
+     // ,
+   // );
   }
 }
