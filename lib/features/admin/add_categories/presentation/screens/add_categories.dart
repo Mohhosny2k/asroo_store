@@ -1,5 +1,5 @@
-import 'package:asroo_store/core/di/injection_container.dart';
-import 'package:asroo_store/features/admin/add_categories/presentation/refactors/add_categories_body.dart';
+import '../../../../../core/di/injection_container.dart';
+import '../refactors/add_categories_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/common/widgets/admin_app_bar.dart';
