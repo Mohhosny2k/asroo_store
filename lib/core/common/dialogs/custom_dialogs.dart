@@ -1,8 +1,8 @@
-import 'package:asroo_store/core/common/widgets/custom_button.dart';
-import 'package:asroo_store/core/common/widgets/text_app.dart';
-import 'package:asroo_store/core/extensions/context_extensions.dart';
-import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
-import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import '../widgets/custom_button.dart';
+import '../widgets/text_app.dart';
+import '../../extensions/context_extensions.dart';
+import '../../style/fonts/font_family_helper.dart';
+import '../../style/fonts/font_weight_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

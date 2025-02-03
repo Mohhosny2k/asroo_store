@@ -1,12 +1,12 @@
 
-import 'package:asroo_store/features/auth/data/data_source/auth_data_source.dart';
-import 'package:asroo_store/features/auth/data/models/login_request_body.dart';
-import 'package:asroo_store/features/auth/data/models/login_response.dart';
-import 'package:asroo_store/features/auth/data/models/sign_up_request_body.dart';
-import 'package:asroo_store/features/auth/data/models/sign_up_response.dart';
-import 'package:asroo_store/features/auth/data/models/user_role_response.dart';
-import 'package:asroo_store/core/language/lang_keys.dart';
-import 'package:asroo_store/core/service/graphql/api_result.dart';
+import '../data_source/auth_data_source.dart';
+import '../models/login_request_body.dart';
+import '../models/login_response.dart';
+import '../models/sign_up_request_body.dart';
+import '../models/sign_up_response.dart';
+import '../models/user_role_response.dart';
+import '../../../../core/language/lang_keys.dart';
+import '../../../../core/service/graphql/api_result.dart';
 
 
 class AuthRepos {

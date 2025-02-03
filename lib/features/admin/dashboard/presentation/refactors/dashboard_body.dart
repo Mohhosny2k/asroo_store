@@ -1,10 +1,10 @@
-import 'package:asroo_store/core/common/widgets/text_app.dart';
-import 'package:asroo_store/core/extensions/context_extensions.dart';
-import 'package:asroo_store/core/style/images/app_images.dart';
-import 'package:asroo_store/features/admin/dashboard/presentation/bloc/categories_number/categories_number_bloc.dart';
-import 'package:asroo_store/features/admin/dashboard/presentation/bloc/products_number/products_number_bloc.dart';
-import 'package:asroo_store/features/admin/dashboard/presentation/bloc/users_number/users_number_bloc.dart';
-import 'package:asroo_store/features/admin/dashboard/presentation/widget/dashboard_container.dart';
+import '../../../../../core/common/widgets/text_app.dart';
+import '../../../../../core/extensions/context_extensions.dart';
+import '../../../../../core/style/images/app_images.dart';
+import '../bloc/categories_number/categories_number_bloc.dart';
+import '../bloc/products_number/products_number_bloc.dart';
+import '../bloc/users_number/users_number_bloc.dart';
+import '../widget/dashboard_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

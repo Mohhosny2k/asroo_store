@@ -1,8 +1,8 @@
-import 'package:asroo_store/core/service/graphql/api_service.dart';
-import 'package:asroo_store/core/service/graphql/qraphql_queries/admin/dashboard_queries.dart';
-import 'package:asroo_store/features/admin/dashboard/data/models/catagories_number_response.dart';
-import 'package:asroo_store/features/admin/dashboard/data/models/products_number_response.dart';
-import 'package:asroo_store/features/admin/dashboard/data/models/users_number_response.dart';
+import '../../../../../core/service/graphql/api_service.dart';
+import '../../../../../core/service/graphql/qraphql_queries/admin/dashboard_queries.dart';
+import '../models/catagories_number_response.dart';
+import '../models/products_number_response.dart';
+import '../models/users_number_response.dart';
 
 class DashBoardDataSource {
   const DashBoardDataSource(this._graphql);

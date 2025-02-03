@@ -1,5 +1,5 @@
-import 'package:asroo_store/features/auth/data/models/login_request_body.dart';
-import 'package:asroo_store/features/auth/data/models/sign_up_request_body.dart';
+import '../../../../../features/auth/data/models/login_request_body.dart';
+import '../../../../../features/auth/data/models/sign_up_request_body.dart';
 
 class AuthQueries {
   factory AuthQueries() {

@@ -1,9 +1,9 @@
-import 'package:asroo_store/core/service/graphql/api_result.dart';
-import 'package:asroo_store/core/utils/app_strings.dart';
-import 'package:asroo_store/features/admin/dashboard/data/data_source/dashboard_data_source.dart';
-import 'package:asroo_store/features/admin/dashboard/data/models/catagories_number_response.dart';
-import 'package:asroo_store/features/admin/dashboard/data/models/products_number_response.dart';
-import 'package:asroo_store/features/admin/dashboard/data/models/users_number_response.dart';
+import '../../../../../core/service/graphql/api_result.dart';
+import '../../../../../core/utils/app_strings.dart';
+import '../data_source/dashboard_data_source.dart';
+import '../models/catagories_number_response.dart';
+import '../models/products_number_response.dart';
+import '../models/users_number_response.dart';
 
 class DashBoardRepo {
   const DashBoardRepo(this._dataSource);

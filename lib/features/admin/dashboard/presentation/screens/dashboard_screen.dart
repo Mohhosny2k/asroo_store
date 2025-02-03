@@ -1,10 +1,10 @@
-import 'package:asroo_store/core/common/widgets/admin_app_bar.dart';
-import 'package:asroo_store/core/di/injection_container.dart';
-import 'package:asroo_store/core/style/colors/colors_dark.dart';
-import 'package:asroo_store/features/admin/dashboard/presentation/bloc/categories_number/categories_number_bloc.dart';
-import 'package:asroo_store/features/admin/dashboard/presentation/bloc/products_number/products_number_bloc.dart';
-import 'package:asroo_store/features/admin/dashboard/presentation/bloc/users_number/users_number_bloc.dart';
-import 'package:asroo_store/features/admin/dashboard/presentation/refactors/dashboard_body.dart';
+import '../../../../../core/common/widgets/admin_app_bar.dart';
+import '../../../../../core/di/injection_container.dart';
+import '../../../../../core/style/colors/colors_dark.dart';
+import '../bloc/categories_number/categories_number_bloc.dart';
+import '../bloc/products_number/products_number_bloc.dart';
+import '../bloc/users_number/users_number_bloc.dart';
+import '../refactors/dashboard_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
