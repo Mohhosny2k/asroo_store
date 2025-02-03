@@ -1,3 +1,6 @@
+import 'package:asroo_store/features/admin/add_categories/data/models/create_category_response.dart';
+import 'package:asroo_store/features/admin/add_categories/data/models/get_all_categories_reponse.dart';
+
 import '../../app/upload_image/model/upload_image_response.dart';
 import '../../../features/admin/dashboard/data/models/catagories_number_response.dart';
 import '../../../features/admin/dashboard/data/models/products_number_response.dart';
@@ -50,25 +53,25 @@ abstract class ApiService {
     @Body() Map<String, dynamic> query,
   );
 
-  // @POST(graphql)
-  // Future<CategoriesGetAllResponse> getAllCategories(
-  //   @Body() Map<String, dynamic> query,
-  // );
+  @POST(graphql)
+  Future<CategoriesGetAllResponse> getAllCategories(
+    @Body() Map<String, dynamic> query,
+  );
 
-  // @POST(graphql)
-  // Future<CreateCategoryResponse> createCategory(
-  //   @Body() Map<String, dynamic> mutation,
-  // );
+  @POST(graphql)
+  Future<CreateCategoryResponse> createCategory(
+    @Body() Map<String, dynamic> mutation,
+  );
 
-  // @POST(graphql)
-  // Future<void> deleteCategory(
-  //   @Body() Map<String, dynamic> mutation,
-  // );
+  @POST(graphql)
+  Future<void> deleteCategory(
+    @Body() Map<String, dynamic> mutation,
+  );
 
-  // @POST(graphql)
-  // Future<void> updateCategory(
-  //   @Body() Map<String, dynamic> mutation,
-  // );
+  @POST(graphql)
+  Future<void> updateCategory(
+    @Body() Map<String, dynamic> mutation,
+  );
 
   // @POST(graphql)
   // Future<GetAllProductResponse> getAllProduct(
