@@ -1,3 +1,6 @@
+import 'package:asroo_store/features/admin/add_categories/presentation/bloc/create_category/create_category_bloc.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
+
 import '../../../../../../core/app/upload_image/cubit/upload_image_cubit.dart';
 import '../../../../../../core/common/bottom_sheet/custom_bottom_sheet.dart';
 import '../../../../../../core/common/widgets/custom_button.dart';
@@ -34,9 +37,9 @@ class CreateCategory extends StatelessWidget {
               context: context,
               widget: MultiBlocProvider(
                 providers: [
-                  // BlocProvider(
-                  //   create: (context) => sl<CreateCategoryBloc>(),
-                  // ),
+                  BlocProvider(
+                    create: (context) => sl<CreateCategoryBloc>(),
+                  ),
                   BlocProvider(
                     create: (context) => sl<UploadImageCubit>(),
                   ),
@@ -44,10 +47,10 @@ class CreateCategory extends StatelessWidget {
                 child: const CreateCategoryBottomSheetWidget(),
               ),
               whenComplete: () {
-                // context.read<GetAllAdminCategoriesBloc>().add(
-                //       const GetAllAdminCategoriesEvent.fetchAdminCategories(
-                //           isNotLoading: false),
-                //     );
+                context.read<GetAllAdminCategoriesBloc>().add(
+                      const GetAllAdminCategoriesEvent.fetchAdminCategories(
+                          isNotLoading: false),
+                    );
               },
             );
           },

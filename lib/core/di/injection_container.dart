@@ -1,3 +1,10 @@
+import 'package:asroo_store/features/admin/add_categories/data/data_source/categories_admin_data_source.dart';
+import 'package:asroo_store/features/admin/add_categories/data/repos/categoreis_admin_repos.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/bloc/create_category/create_category_bloc.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/bloc/delete_category/delete_category_bloc.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/bloc/update_category/update_category_bloc.dart';
+
 import '../app/upload_image/cubit/upload_image_cubit.dart';
 import '../app/upload_image/data_source/upload_image_data_source.dart';
 import '../app/upload_image/repo/upload_image_repo.dart';
@@ -27,7 +34,7 @@ Future<void> setupInjector() async {
 
   await _initAuth();
     await _initDashBoard();
-  // await _initCategoriesAdmin();
+   await _initCategoriesAdmin();
   // await _initProductsAdmin();
   // await _initUsersAdmin();
   // await _initAddNotification();
@@ -74,15 +81,15 @@ Future<void> _initDashBoard() async {
 
 
 
-// Future<void> _initCategoriesAdmin() async {
-//   sl
-//     ..registerLazySingleton(() => CategoreisAdminRepo(sl()))
-//     ..registerLazySingleton(() => CategoriesAdminDataSource(sl()))
-//     ..registerFactory(() => GetAllAdminCategoriesBloc(sl()))
-//     ..registerFactory(() => CreateCategoryBloc(sl()))
-//     ..registerFactory(() => DeleteCategoryBloc(sl()))
-//     ..registerFactory(() => UpdateCategoryBloc(sl()));
-// }
+Future<void> _initCategoriesAdmin() async {
+  sl
+    ..registerLazySingleton(() => CategoreisAdminRepo(sl()))
+    ..registerLazySingleton(() => CategoriesAdminDataSource(sl()))
+    ..registerFactory(() => GetAllAdminCategoriesBloc(sl()))
+    ..registerFactory(() => CreateCategoryBloc(sl()))
+    ..registerFactory(() => DeleteCategoryBloc(sl()))
+    ..registerFactory(() => UpdateCategoryBloc(sl()));
+}
 
 // Future<void> _initProductsAdmin() async {
 //   sl

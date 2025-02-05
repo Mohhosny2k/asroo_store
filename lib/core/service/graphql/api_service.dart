@@ -19,7 +19,7 @@ const String graphql = '/graphql';
 @RestApi(baseUrl: baseUrl)
 abstract class ApiService {
   factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
-
+ /// Auth
   @POST(graphql)
   Future<LoginResponse> login(
     @Body() Map<String, dynamic> mutation,
@@ -37,7 +37,7 @@ abstract class ApiService {
   Future<SignUpResponse> signUp(
     @Body() Map<String, dynamic> mutation,
   );
-
+/// Dashboard
   @POST(graphql)
   Future<ProductsNumberResponse> numberOfProducts(
     @Body() Map<String, dynamic> query,
@@ -52,7 +52,7 @@ abstract class ApiService {
   Future<UsersNumberResponse> numberOfUsers(
     @Body() Map<String, dynamic> query,
   );
-
+// Categories
   @POST(graphql)
   Future<CategoriesGetAllResponse> getAllCategories(
     @Body() Map<String, dynamic> query,
@@ -72,6 +72,7 @@ abstract class ApiService {
   Future<void> updateCategory(
     @Body() Map<String, dynamic> mutation,
   );
+ // Products
 
   // @POST(graphql)
   // Future<GetAllProductResponse> getAllProduct(
@@ -93,6 +94,7 @@ abstract class ApiService {
   //   @Body() Map<String, dynamic> mutation,
   // );
 
+// Users
   // @POST(graphql)
   // Future<GetAllUsersResponse> getAllUsers(
   //   @Body() Map<String, dynamic> query,
@@ -102,6 +104,8 @@ abstract class ApiService {
   // Future<void> deleteUser(
   //   @Body() Map<String, dynamic> mutation,
   // );
+
+//! Notifications
 
   // @POST(graphql)
   // Future<BannersResponse> getBanners(

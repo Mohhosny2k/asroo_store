@@ -1,3 +1,5 @@
+import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/bloc/update_category/update_category_bloc.dart';
 import '../../../../../core/app/upload_image/cubit/upload_image_cubit.dart';
 import '../../../../../core/common/bottom_sheet/custom_bottom_sheet.dart';
 import '../../../../../core/common/widgets/custom_container_linear_admin.dart';
@@ -52,9 +54,9 @@ class AddCatgeoryItem extends StatelessWidget {
                 Row(
                   children: [
                     //Delete
-                    // DeleteCategoryWidget(
-                    //   categoryId: categoryId,
-                    // ),
+                    DeleteCategoryWidget(
+                      categoryId: categoryId,
+                    ),
                     SizedBox(width: 20.h),
                     //Update
                     InkWell(
@@ -96,9 +98,9 @@ class AddCatgeoryItem extends StatelessWidget {
       context: context,
       widget: MultiBlocProvider(
         providers: [
-          // BlocProvider(
-          //   create: (context) => sl<UpdateCategoryBloc>(),
-          // ),
+          BlocProvider(
+            create: (context) => sl<UpdateCategoryBloc>(),
+          ),
           BlocProvider(
             create: (context) => sl<UploadImageCubit>(),
           ),
@@ -110,11 +112,11 @@ class AddCatgeoryItem extends StatelessWidget {
         ),
       ),
       whenComplete: () {
-        // context.read<GetAllAdminCategoriesBloc>().add(
-        //       const GetAllAdminCategoriesEvent.fetchAdminCategories(
-        //         isNotLoading: false,
-        //       ),
-        //     );
+        context.read<GetAllAdminCategoriesBloc>().add(
+              const GetAllAdminCategoriesEvent.fetchAdminCategories(
+                isNotLoading: false,
+              ),
+            );
       },
     );
   }

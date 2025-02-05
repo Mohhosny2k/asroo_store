@@ -1,3 +1,4 @@
+import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
 import '../../../../../core/common/loading/empty_screen.dart';
 import '../../../../../core/common/loading/loading_shimmer.dart';
 import '../../../../../core/style/colors/colors_dark.dart';
@@ -24,63 +25,63 @@ class AddCategoriesBody extends StatelessWidget {
             child: RefreshIndicator(
               color: ColorsDark.blueLight,
               onRefresh: () async {
-                // context.read<GetAllAdminCategoriesBloc>().add(
-                //       const GetAllAdminCategoriesEvent.fetchAdminCategories(
-                //         isNotLoading: true,
-                //       ),
-                //     );
+                context.read<GetAllAdminCategoriesBloc>().add(
+                      const GetAllAdminCategoriesEvent.fetchAdminCategories(
+                        isNotLoading: true,
+                      ),
+                    );
               },
               child: CustomScrollView(
                 slivers: [
                   SliverToBoxAdapter(
                     child: SizedBox(height: 20.h),
                   ),
-                  // SliverToBoxAdapter(
-                  //   child: BlocBuilder<GetAllAdminCategoriesBloc,
-                  //       GetAllAdminCategoriesState>(
-                  //     builder: (context, state) {
-                  //       return state.when(
-                  //         loading: () {
-                  //           return ListView.separated(
-                  //             shrinkWrap: true,
-                  //             physics: const NeverScrollableScrollPhysics(),
-                  //             itemBuilder: (context, index) {
-                  //               return LoadingShimmer(
-                  //                 height: 130.h,
-                  //                 borderRadius: 15,
-                  //               );
-                  //             },
-                  //             separatorBuilder: (context, index) =>
-                  //                 SizedBox(height: 15.h),
-                  //             itemCount: 4,
-                  //           );
-                  //         },
-                  //         success: (list) {
-                  //           return ListView.separated(
-                  //             shrinkWrap: true,
-                  //             physics: const NeverScrollableScrollPhysics(),
-                  //             itemBuilder: (context, index) {
-                  //               return AddCatgeoryItem(
-                  //                 name: list.categoriesGetAllList[index].name ??
-                  //                     '',
-                  //                 categoryId:
-                  //                     list.categoriesGetAllList[index].id ?? '',
-                  //                 image:
-                  //                     list.categoriesGetAllList[index].image ??
-                  //                         '',
-                  //               );
-                  //             },
-                  //             separatorBuilder: (context, index) =>
-                  //                 SizedBox(height: 15.h),
-                  //             itemCount: list.categoriesGetAllList.length,
-                  //           );
-                  //         },
-                  //         empty: EmptyScreen.new,
-                  //         error: Text.new,
-                  //       );
-                  //     },
-                  //   ),
-                  // ),
+                  SliverToBoxAdapter(
+                    child: BlocBuilder<GetAllAdminCategoriesBloc,
+                        GetAllAdminCategoriesState>(
+                      builder: (context, state) {
+                        return state.when(
+                          loading: () {
+                            return ListView.separated(
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemBuilder: (context, index) {
+                                return LoadingShimmer(
+                                  height: 130.h,
+                                  borderRadius: 15,
+                                );
+                              },
+                              separatorBuilder: (context, index) =>
+                                  SizedBox(height: 15.h),
+                              itemCount: 4,
+                            );
+                          },
+                          success: (list) {
+                            return ListView.separated(
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemBuilder: (context, index) {
+                                return AddCatgeoryItem(
+                                  name: list.categoriesGetAllList[index].name ??
+                                      '',
+                                  categoryId:
+                                      list.categoriesGetAllList[index].id ?? '',
+                                  image:
+                                      list.categoriesGetAllList[index].image ??
+                                          '',
+                                );
+                              },
+                              separatorBuilder: (context, index) =>
+                                  SizedBox(height: 15.h),
+                              itemCount: list.categoriesGetAllList.length,
+                            );
+                          },
+                          empty: EmptyScreen.new,
+                          error: Text.new,
+                        );
+                      },
+                    ),
+                  ),
                 ],
               ),
             ),
