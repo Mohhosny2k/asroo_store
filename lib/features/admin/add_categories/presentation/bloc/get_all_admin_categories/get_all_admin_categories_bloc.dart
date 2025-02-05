@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'package:asroo_store/features/admin/add_categories/data/models/get_all_categories_reponse.dart';
-import 'package:asroo_store/features/admin/add_categories/data/repos/categoreis_admin_repos.dart';
+import '../../../data/models/get_all_categories_reponse.dart';
+import '../../../data/repos/categoreis_admin_repos.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

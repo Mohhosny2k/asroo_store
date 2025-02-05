@@ -1,6 +1,6 @@
 
-import 'package:asroo_store/features/admin/add_categories/data/models/create_category_request_body.dart';
-import 'package:asroo_store/features/admin/add_categories/data/models/update_category_request_body.dart';
+import '../../../../../features/admin/add_categories/data/models/create_category_request_body.dart';
+import '../../../../../features/admin/add_categories/data/models/update_category_request_body.dart';
 
 class CategoriesQueries {
   factory CategoriesQueries() {

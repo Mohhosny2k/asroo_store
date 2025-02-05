@@ -1,9 +1,9 @@
-import 'package:asroo_store/features/admin/add_categories/data/data_source/categories_admin_data_source.dart';
-import 'package:asroo_store/features/admin/add_categories/data/repos/categoreis_admin_repos.dart';
-import 'package:asroo_store/features/admin/add_categories/presentation/bloc/create_category/create_category_bloc.dart';
-import 'package:asroo_store/features/admin/add_categories/presentation/bloc/delete_category/delete_category_bloc.dart';
-import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
-import 'package:asroo_store/features/admin/add_categories/presentation/bloc/update_category/update_category_bloc.dart';
+import '../../features/admin/add_categories/data/data_source/categories_admin_data_source.dart';
+import '../../features/admin/add_categories/data/repos/categoreis_admin_repos.dart';
+import '../../features/admin/add_categories/presentation/bloc/create_category/create_category_bloc.dart';
+import '../../features/admin/add_categories/presentation/bloc/delete_category/delete_category_bloc.dart';
+import '../../features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
+import '../../features/admin/add_categories/presentation/bloc/update_category/update_category_bloc.dart';
 
 import '../app/upload_image/cubit/upload_image_cubit.dart';
 import '../app/upload_image/data_source/upload_image_data_source.dart';

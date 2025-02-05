@@ -1,5 +1,5 @@
-import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
-import 'package:asroo_store/features/admin/add_categories/presentation/bloc/update_category/update_category_bloc.dart';
+import '../bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
+import '../bloc/update_category/update_category_bloc.dart';
 import '../../../../../core/app/upload_image/cubit/upload_image_cubit.dart';
 import '../../../../../core/common/bottom_sheet/custom_bottom_sheet.dart';
 import '../../../../../core/common/widgets/custom_container_linear_admin.dart';

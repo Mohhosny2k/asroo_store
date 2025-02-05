@@ -1,5 +1,5 @@
-import 'package:asroo_store/features/admin/add_categories/presentation/bloc/delete_category/delete_category_bloc.dart';
-import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
+import '../bloc/delete_category/delete_category_bloc.dart';
+import '../bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
 import '../../../../../core/di/injection_container.dart';
 import '../refactors/add_categories_body.dart';
 import 'package:flutter/material.dart';

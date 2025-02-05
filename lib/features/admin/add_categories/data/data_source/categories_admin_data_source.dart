@@ -1,9 +1,9 @@
-import 'package:asroo_store/core/service/graphql/api_service.dart';
-import 'package:asroo_store/core/service/graphql/qraphql_queries/admin/categories_queries.dart';
-import 'package:asroo_store/features/admin/add_categories/data/models/create_category_request_body.dart';
-import 'package:asroo_store/features/admin/add_categories/data/models/create_category_response.dart';
-import 'package:asroo_store/features/admin/add_categories/data/models/get_all_categories_reponse.dart';
-import 'package:asroo_store/features/admin/add_categories/data/models/update_category_request_body.dart';
+import '../../../../../core/service/graphql/api_service.dart';
+import '../../../../../core/service/graphql/qraphql_queries/admin/categories_queries.dart';
+import '../models/create_category_request_body.dart';
+import '../models/create_category_response.dart';
+import '../models/get_all_categories_reponse.dart';
+import '../models/update_category_request_body.dart';
 
 class CategoriesAdminDataSource {
   const CategoriesAdminDataSource(this._graphql);

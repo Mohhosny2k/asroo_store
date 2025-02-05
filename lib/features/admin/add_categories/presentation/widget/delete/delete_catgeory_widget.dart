@@ -1,7 +1,7 @@
-import 'package:asroo_store/core/common/toast/show_toast.dart';
-import 'package:asroo_store/core/style/colors/colors_dark.dart';
-import 'package:asroo_store/features/admin/add_categories/presentation/bloc/delete_category/delete_category_bloc.dart';
-import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
+import '../../../../../../core/common/toast/show_toast.dart';
+import '../../../../../../core/style/colors/colors_dark.dart';
+import '../../bloc/delete_category/delete_category_bloc.dart';
+import '../../bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

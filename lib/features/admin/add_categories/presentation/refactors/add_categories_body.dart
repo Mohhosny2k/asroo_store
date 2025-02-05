@@ -1,4 +1,4 @@
-import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
+import '../bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
 import '../../../../../core/common/loading/empty_screen.dart';
 import '../../../../../core/common/loading/loading_shimmer.dart';
 import '../../../../../core/style/colors/colors_dark.dart';
@@ -76,7 +76,7 @@ class AddCategoriesBody extends StatelessWidget {
                               itemCount: list.categoriesGetAllList.length,
                             );
                           },
-                          empty: EmptyScreen.new,
+                          empty: EmptyScreen.new ,// (){ return const EmptyScreen(); },
                           error: Text.new,
                         );
                       },

@@ -1,14 +1,12 @@
+import 'package:dio/dio.dart';
+import 'package:flutter/widgets.dart';
+import '../../../../core/service/graphql/api_service.dart';
+import '../../../../core/service/graphql/qraphql_queries/auth/auth_queries.dart';
 import '../models/login_request_body.dart';
 import '../models/login_response.dart';
 import '../models/sign_up_request_body.dart';
 import '../models/sign_up_response.dart';
 import '../models/user_role_response.dart';
-import '../../../../core/service/graphql/api_service.dart';
-import '../../../../core/service/graphql/qraphql_queries/auth/auth_queries.dart';
-import '../../../../core/utils/app_strings.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dio/dio.dart';
-import 'package:flutter/widgets.dart';
 
 class AuthDataSource {
   const AuthDataSource(this._graphql);

@@ -1,10 +1,10 @@
-import 'package:asroo_store/core/service/graphql/api_result.dart';
-import 'package:asroo_store/core/utils/app_strings.dart';
-import 'package:asroo_store/features/admin/add_categories/data/data_source/categories_admin_data_source.dart';
-import 'package:asroo_store/features/admin/add_categories/data/models/create_category_request_body.dart';
-import 'package:asroo_store/features/admin/add_categories/data/models/create_category_response.dart';
-import 'package:asroo_store/features/admin/add_categories/data/models/get_all_categories_reponse.dart';
-import 'package:asroo_store/features/admin/add_categories/data/models/update_category_request_body.dart';
+import '../../../../../core/service/graphql/api_result.dart';
+import '../../../../../core/utils/app_strings.dart';
+import '../data_source/categories_admin_data_source.dart';
+import '../models/create_category_request_body.dart';
+import '../models/create_category_response.dart';
+import '../models/get_all_categories_reponse.dart';
+import '../models/update_category_request_body.dart';
 
 class CategoreisAdminRepo {
   const CategoreisAdminRepo(this._dataSource);

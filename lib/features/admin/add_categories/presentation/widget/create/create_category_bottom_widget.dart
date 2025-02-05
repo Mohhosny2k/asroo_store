@@ -1,5 +1,5 @@
-import 'package:asroo_store/features/admin/add_categories/data/models/create_category_request_body.dart';
-import 'package:asroo_store/features/admin/add_categories/presentation/bloc/create_category/create_category_bloc.dart';
+import '../../../data/models/create_category_request_body.dart';
+import '../../bloc/create_category/create_category_bloc.dart';
 
 import '../../../../../../core/app/upload_image/cubit/upload_image_cubit.dart';
 import '../../../../../../core/common/toast/show_toast.dart';
