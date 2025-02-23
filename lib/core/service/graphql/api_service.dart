@@ -1,3 +1,6 @@
+import '../../../features/admin/add_categories/data/models/create_category_response.dart';
+import '../../../features/admin/add_categories/data/models/get_all_categories_reponse.dart';
+
 import '../../app/upload_image/model/upload_image_response.dart';
 import '../../../features/admin/dashboard/data/models/catagories_number_response.dart';
 import '../../../features/admin/dashboard/data/models/products_number_response.dart';
@@ -16,7 +19,7 @@ const String graphql = '/graphql';
 @RestApi(baseUrl: baseUrl)
 abstract class ApiService {
   factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
-
+ /// Auth
   @POST(graphql)
   Future<LoginResponse> login(
     @Body() Map<String, dynamic> mutation,
@@ -34,7 +37,7 @@ abstract class ApiService {
   Future<SignUpResponse> signUp(
     @Body() Map<String, dynamic> mutation,
   );
-
+/// Dashboard
   @POST(graphql)
   Future<ProductsNumberResponse> numberOfProducts(
     @Body() Map<String, dynamic> query,
@@ -49,26 +52,27 @@ abstract class ApiService {
   Future<UsersNumberResponse> numberOfUsers(
     @Body() Map<String, dynamic> query,
   );
+// Categories
+  @POST(graphql)
+  Future<CategoriesGetAllResponse> getAllCategories(
+    @Body() Map<String, dynamic> query,
+  );
 
-  // @POST(graphql)
-  // Future<CategoriesGetAllResponse> getAllCategories(
-  //   @Body() Map<String, dynamic> query,
-  // );
+  @POST(graphql)
+  Future<CreateCategoryResponse> createCategory(
+    @Body() Map<String, dynamic> mutation,
+  );
 
-  // @POST(graphql)
-  // Future<CreateCategoryResponse> createCategory(
-  //   @Body() Map<String, dynamic> mutation,
-  // );
+  @POST(graphql)
+  Future<void> deleteCategory(
+    @Body() Map<String, dynamic> mutation,
+  );
 
-  // @POST(graphql)
-  // Future<void> deleteCategory(
-  //   @Body() Map<String, dynamic> mutation,
-  // );
-
-  // @POST(graphql)
-  // Future<void> updateCategory(
-  //   @Body() Map<String, dynamic> mutation,
-  // );
+  @POST(graphql)
+  Future<void> updateCategory(
+    @Body() Map<String, dynamic> mutation,
+  );
+ // Products
 
   // @POST(graphql)
   // Future<GetAllProductResponse> getAllProduct(
@@ -90,6 +94,7 @@ abstract class ApiService {
   //   @Body() Map<String, dynamic> mutation,
   // );
 
+// Users
   // @POST(graphql)
   // Future<GetAllUsersResponse> getAllUsers(
   //   @Body() Map<String, dynamic> query,
@@ -99,6 +104,8 @@ abstract class ApiService {
   // Future<void> deleteUser(
   //   @Body() Map<String, dynamic> mutation,
   // );
+
+//! Notifications
 
   // @POST(graphql)
   // Future<BannersResponse> getBanners(
