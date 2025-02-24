@@ -1,8 +1,8 @@
-import 'package:asroo_store/core/common/loading/empty_screen.dart';
-import 'package:asroo_store/core/common/loading/loading_shimmer.dart';
-import 'package:asroo_store/features/admin/add_products/presentation/bloc/get_all_admin_product/get_all_admin_product_bloc.dart';
-import 'package:asroo_store/features/admin/add_products/presentation/widget/create/create_product.dart';
-import 'package:asroo_store/features/admin/add_products/presentation/widget/product_admin_item.dart';
+import '../../../../../core/common/loading/empty_screen.dart';
+import '../../../../../core/common/loading/loading_shimmer.dart';
+import '../bloc/get_all_admin_product/get_all_admin_product_bloc.dart';
+import '../widget/create/create_product.dart';
+import '../widget/product_admin_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

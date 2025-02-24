@@ -1,5 +1,5 @@
-import 'package:asroo_store/features/admin/add_products/data/models/create_product_request_body.dart';
-import 'package:asroo_store/features/admin/add_products/data/models/update_product_request_body.dart';
+import '../../../../../features/admin/add_products/data/models/create_product_request_body.dart';
+import '../../../../../features/admin/add_products/data/models/update_product_request_body.dart';
 
 class ProductsQueries {
   factory ProductsQueries() {

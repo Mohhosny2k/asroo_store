@@ -1,4 +1,4 @@
-import 'package:asroo_store/features/admin/add_products/data/models/get_all_product_reponse.dart';
+import '../../../features/admin/add_products/data/models/get_all_product_reponse.dart';
 import '../../../features/admin/add_categories/data/models/create_category_response.dart';
 import '../../../features/admin/add_categories/data/models/get_all_categories_reponse.dart';
 import '../../app/upload_image/model/upload_image_response.dart';

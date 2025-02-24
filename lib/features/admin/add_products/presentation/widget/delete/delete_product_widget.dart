@@ -1,7 +1,7 @@
 
-import 'package:asroo_store/core/common/toast/show_toast.dart';
-import 'package:asroo_store/features/admin/add_products/presentation/bloc/delete_product/delete_product_bloc.dart';
-import 'package:asroo_store/features/admin/add_products/presentation/bloc/get_all_admin_product/get_all_admin_product_bloc.dart';
+import '../../../../../../core/common/toast/show_toast.dart';
+import '../../bloc/delete_product/delete_product_bloc.dart';
+import '../../bloc/get_all_admin_product/get_all_admin_product_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

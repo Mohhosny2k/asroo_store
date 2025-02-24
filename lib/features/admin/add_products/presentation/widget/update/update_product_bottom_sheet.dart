@@ -1,17 +1,15 @@
-
-
-import 'package:asroo_store/core/common/toast/show_toast.dart';
-import 'package:asroo_store/core/common/widgets/custom_button.dart';
-import 'package:asroo_store/core/common/widgets/custom_drop_down.dart';
-import 'package:asroo_store/core/common/widgets/custom_text_field.dart';
-import 'package:asroo_store/core/common/widgets/text_app.dart';
-import 'package:asroo_store/core/extensions/context_extensions.dart';
-import 'package:asroo_store/core/style/colors/colors_dark.dart';
-import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
-import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
-import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
-import 'package:asroo_store/features/admin/add_products/presentation/bloc/update_product/update_product_bloc.dart';
-import 'package:asroo_store/features/admin/add_products/presentation/widget/update/update_product_images.dart';
+import '../../../../../../core/common/toast/show_toast.dart';
+import '../../../../../../core/common/widgets/custom_button.dart';
+import '../../../../../../core/common/widgets/custom_drop_down.dart';
+import '../../../../../../core/common/widgets/custom_text_field.dart';
+import '../../../../../../core/common/widgets/text_app.dart';
+import '../../../../../../core/extensions/context_extensions.dart';
+import '../../../../../../core/style/colors/colors_dark.dart';
+import '../../../../../../core/style/fonts/font_family_helper.dart';
+import '../../../../../../core/style/fonts/font_weight_helper.dart';
+import '../../../../add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
+import '../../bloc/update_product/update_product_bloc.dart';
+import 'update_product_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

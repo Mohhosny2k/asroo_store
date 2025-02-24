@@ -1,9 +1,9 @@
-import 'package:asroo_store/core/common/widgets/admin_app_bar.dart';
-import 'package:asroo_store/core/di/injection_container.dart';
-import 'package:asroo_store/core/style/colors/colors_dark.dart';
-import 'package:asroo_store/features/admin/add_products/presentation/bloc/delete_product/delete_product_bloc.dart';
-import 'package:asroo_store/features/admin/add_products/presentation/bloc/get_all_admin_product/get_all_admin_product_bloc.dart';
-import 'package:asroo_store/features/admin/add_products/presentation/refactors/add_products_body.dart';
+import '../../../../../core/common/widgets/admin_app_bar.dart';
+import '../../../../../core/di/injection_container.dart';
+import '../../../../../core/style/colors/colors_dark.dart';
+import '../bloc/delete_product/delete_product_bloc.dart';
+import '../bloc/get_all_admin_product/get_all_admin_product_bloc.dart';
+import '../refactors/add_products_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -10,8 +10,8 @@ import 'update_upload_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:asroo_store/features/admin/add_categories/data/models/update_category_request_body.dart';
-import 'package:asroo_store/features/admin/add_categories/presentation/bloc/update_category/update_category_bloc.dart';
+import '../../../data/models/update_category_request_body.dart';
+import '../../bloc/update_category/update_category_bloc.dart';
 
 class UpdateCategoryBottomWidget extends StatefulWidget {
   const UpdateCategoryBottomWidget({

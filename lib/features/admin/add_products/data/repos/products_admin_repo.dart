@@ -1,9 +1,9 @@
-import 'package:asroo_store/core/service/graphql/api_result.dart';
-import 'package:asroo_store/core/utils/app_strings.dart';
-import 'package:asroo_store/features/admin/add_products/data/data_source/products_admin_data_source.dart';
-import 'package:asroo_store/features/admin/add_products/data/models/create_product_request_body.dart';
-import 'package:asroo_store/features/admin/add_products/data/models/get_all_product_reponse.dart';
-import 'package:asroo_store/features/admin/add_products/data/models/update_product_request_body.dart';
+import '../../../../../core/service/graphql/api_result.dart';
+import '../../../../../core/utils/app_strings.dart';
+import '../data_source/products_admin_data_source.dart';
+import '../models/create_product_request_body.dart';
+import '../models/get_all_product_reponse.dart';
+import '../models/update_product_request_body.dart';
 
 class ProductsAdminRepo {
   const ProductsAdminRepo(this._dataSource);
