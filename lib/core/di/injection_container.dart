@@ -42,7 +42,7 @@ Future<void> setupInjector() async {
   await _initAuth();
     await _initDashBoard();
    await _initCategoriesAdmin();
-  // await _initProductsAdmin();
+   await _initProductsAdmin();
   // await _initUsersAdmin();
   // await _initAddNotification();
   // await _initMain();
