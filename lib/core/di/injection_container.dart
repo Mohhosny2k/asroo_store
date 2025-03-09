@@ -1,3 +1,15 @@
+import '../../features/admin/users/data/data_sources/users_data_source.dart';
+import '../../features/admin/users/data/repos/users_repo.dart';
+import '../../features/admin/users/presentation/bloc/delete_user/delete_user_bloc.dart';
+import '../../features/admin/users/presentation/bloc/get_all_users/get_all_users_bloc.dart';
+
+import '../../features/admin/add_products/data/data_source/products_admin_data_source.dart';
+import '../../features/admin/add_products/data/repos/products_admin_repo.dart';
+import '../../features/admin/add_products/presentation/bloc/create_product/create_prodcut_bloc.dart';
+import '../../features/admin/add_products/presentation/bloc/delete_product/delete_product_bloc.dart';
+import '../../features/admin/add_products/presentation/bloc/get_all_admin_product/get_all_admin_product_bloc.dart';
+import '../../features/admin/add_products/presentation/bloc/update_product/update_product_bloc.dart';
+
 import '../../features/admin/add_categories/data/data_source/categories_admin_data_source.dart';
 import '../../features/admin/add_categories/data/repos/categoreis_admin_repos.dart';
 import '../../features/admin/add_categories/presentation/bloc/create_category/create_category_bloc.dart';
@@ -35,8 +47,8 @@ Future<void> setupInjector() async {
   await _initAuth();
     await _initDashBoard();
    await _initCategoriesAdmin();
-  // await _initProductsAdmin();
-  // await _initUsersAdmin();
+   await _initProductsAdmin();
+ await _initUsersAdmin();
   // await _initAddNotification();
   // await _initMain();
   // await _initProfile();
@@ -91,23 +103,23 @@ Future<void> _initCategoriesAdmin() async {
     ..registerFactory(() => UpdateCategoryBloc(sl()));
 }
 
-// Future<void> _initProductsAdmin() async {
-//   sl
-//     ..registerLazySingleton(() => ProductsAdminRepo(sl()))
-//     ..registerLazySingleton(() => ProductsAdminDataSource(sl()))
-//     ..registerFactory(() => GetAllAdminProductBloc(sl()))
-//     ..registerFactory(() => CreateProdcutBloc(sl()))
-//     ..registerFactory(() => DeleteProductBloc(sl()))
-//     ..registerFactory(() => UpdateProductBloc(sl()));
-// }
+Future<void> _initProductsAdmin() async {
+  sl
+    ..registerLazySingleton(() => ProductsAdminRepo(sl()))
+    ..registerLazySingleton(() => ProductsAdminDataSource(sl()))
+    ..registerFactory(() => GetAllAdminProductBloc(sl()))
+    ..registerFactory(() => CreateProdcutBloc(sl()))
+    ..registerFactory(() => DeleteProductBloc(sl()))
+    ..registerFactory(() => UpdateProductBloc(sl()));
+}
 
-// Future<void> _initUsersAdmin() async {
-//   sl
-//     ..registerLazySingleton(() => UsersRepo(sl()))
-//     ..registerLazySingleton(() => UserDataSource(sl()))
-//     ..registerFactory(() => GetAllUsersBloc(sl()))
-//     ..registerFactory(() => DeleteUserBloc(sl()));
-// }
+Future<void> _initUsersAdmin() async {
+  sl
+    ..registerLazySingleton(() => UsersRepo(sl()))
+    ..registerLazySingleton(() => UserDataSource(sl()))
+    ..registerFactory(() => GetAllUsersBloc(sl()))
+    ..registerFactory(() => DeleteUserBloc(sl()));
+}
 
 // Future<void> _initAddNotification() async {
 //   sl
