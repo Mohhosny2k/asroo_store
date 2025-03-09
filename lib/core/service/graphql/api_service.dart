@@ -95,15 +95,15 @@ abstract class ApiService {
   );
 
 // Users
-  // @POST(graphql)
-  // Future<GetAllUsersResponse> getAllUsers(
-  //   @Body() Map<String, dynamic> query,
-  // );
+  @POST(graphql)
+  Future<GetAllUsersResponse> getAllUsers(
+    @Body() Map<String, dynamic> query,
+  );
 
-  // @POST(graphql)
-  // Future<void> deleteUser(
-  //   @Body() Map<String, dynamic> mutation,
-  // );
+  @POST(graphql)
+  Future<void> deleteUser(
+    @Body() Map<String, dynamic> mutation,
+  );
 
 //! Notifications
 
