@@ -1,40 +1,65 @@
 
-import '../../../../../../core/app/upload_image/cubit/upload_image_cubit.dart';
-import '../../../../../../core/common/toast/show_toast.dart';
-import '../../../../../../core/common/widgets/custom_button.dart';
-import '../../../../../../core/common/widgets/custom_drop_down.dart';
-import '../../../../../../core/common/widgets/custom_text_field.dart';
-import '../../../../../../core/common/widgets/text_app.dart';
-import '../../../../../../core/extensions/context_extensions.dart';
-import '../../../../../../core/language/lang_keys.dart';
-import '../../../../../../core/style/colors/colors_dark.dart';
-import '../../../../../../core/style/fonts/font_family_helper.dart';
-import '../../../../../../core/style/fonts/font_weight_helper.dart';
-import '../../../../add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
-import '../../../data/models/create_product_request_body.dart';
-import '../../bloc/create_product/create_prodcut_bloc.dart';
-import 'create_product_images.dart';
+import 'package:asroo_store/core/common/toast/show_toast.dart';
+import 'package:asroo_store/core/common/widgets/custom_button.dart';
+import 'package:asroo_store/core/common/widgets/custom_drop_down.dart';
+import 'package:asroo_store/core/common/widgets/custom_text_field.dart';
+import 'package:asroo_store/core/common/widgets/text_app.dart';
+import 'package:asroo_store/core/extensions/context_extension.dart';
+import 'package:asroo_store/core/style/colors/colors_dark.dart';
+import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
+import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
+import 'package:asroo_store/features/admin/add_products/presentation/bloc/update_product/update_product_bloc.dart';
+import 'package:asroo_store/features/admin/add_products/presentation/widgets/update/update_product_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CreateProductBottomSheet extends StatefulWidget {
-  const CreateProductBottomSheet({super.key});
+class UpdateProductBottomSheet extends StatefulWidget {
+  const UpdateProductBottomSheet({
+    required this.imageList,
+    required this.categoryName,
+    required this.title,
+    required this.price,
+    required this.description,
+    required this.productId,
+    required this.categoryId,
+    super.key,
+  });
+
+  final List<String> imageList;
+  final String categoryName;
+  final String title;
+  final String price;
+  final String description;
+  final String productId;
+  final String categoryId;
 
   @override
-  State<CreateProductBottomSheet> createState() =>
-      _CreateProductBottomSheetState();
+  State<UpdateProductBottomSheet> createState() =>
+      _UpdateProductBottomSheetState();
 }
 
-class _CreateProductBottomSheetState extends State<CreateProductBottomSheet> {
+class _UpdateProductBottomSheetState extends State<UpdateProductBottomSheet> {
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _priceController = TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
 
   final fromKey = GlobalKey<FormState>();
 
-  String? categoryName;
-  double? catgeoryId;
+  String? categoryValueName;
+  String? categoryValueId;
+
+  @override
+  void initState() {
+    super.initState();
+
+    categoryValueName = widget.categoryName;
+    categoryValueId = widget.categoryId;
+    _titleController.text = widget.title;
+    _priceController.text = widget.price;
+    _descriptionController.text = widget.description;
+  }
 
   @override
   void dispose() {
@@ -57,7 +82,7 @@ class _CreateProductBottomSheetState extends State<CreateProductBottomSheet> {
               //Title Update Product
               Center(
                 child: TextApp(
-                  text: 'Create Product',
+                  text: 'Update Product',
                   theme: context.textStyle.copyWith(
                     fontSize: 20.sp,
                     fontWeight: FontWeightHelper.bold,
@@ -67,7 +92,7 @@ class _CreateProductBottomSheetState extends State<CreateProductBottomSheet> {
               ),
               SizedBox(height: 20.h),
               TextApp(
-                text: 'Create a photos',
+                text: 'Update a photos',
                 theme: context.textStyle.copyWith(
                   fontSize: 16.sp,
                   fontWeight: FontWeightHelper.medium,
@@ -75,8 +100,10 @@ class _CreateProductBottomSheetState extends State<CreateProductBottomSheet> {
                 ),
               ),
               SizedBox(height: 15.h),
-              //Create Image Widget
-              const CreateProductImages(),
+              //Update Image Widget
+              UpdateProductImages(
+                imageList: widget.imageList,
+              ),
               SizedBox(height: 15.h),
               TextApp(
                 text: 'Title',
@@ -159,27 +186,27 @@ class _CreateProductBottomSheetState extends State<CreateProductBottomSheet> {
                   GetAllAdminCategoriesState>(
                 builder: (context, state) {
                   return state.maybeWhen(
-                    success: (catgeory) {
+                    success: (category) {
                       return CustomCreateDropDown(
-                        hintText: 'Select a Category',
-                        items: catgeory.categoryDropdownList,
+                        hintText: '',
+                        items: category.categoryDropdownList,
                         onChanged: (value) {
                           setState(() {
-                            categoryName = value;
+                            categoryValueName = value;
 
-                            final catgeoryIdString = catgeory
+                            final catgeoryIdString = category
                                 .categoriesGetAllList
                                 .firstWhere((e) => e.name == value)
                                 .id!;
-                            catgeoryId = double.parse(catgeoryIdString);
+                            categoryValueId = catgeoryIdString;
                           });
                         },
-                        value: categoryName,
+                        value: categoryValueName,
                       );
                     },
                     orElse: () {
                       return CustomCreateDropDown(
-                        hintText: 'Select a Category',
+                        hintText: '',
                         items: const [''],
                         onChanged: (value) {},
                         value: '',
@@ -189,22 +216,20 @@ class _CreateProductBottomSheetState extends State<CreateProductBottomSheet> {
                 },
               ),
               SizedBox(height: 15.h),
-              SizedBox(height: 15.h),
-              //Create Product Button
-              BlocConsumer<CreateProdcutBloc, CreateProdcutState>(
+              //Update Product Button
+              BlocConsumer<UpdateProductBloc, UpdateProductState>(
                 listener: (context, state) {
                   state.whenOrNull(
                     success: () {
                       context.pop();
-
                       ShowToast.showToastSuccessTop(
-                        message: '${_titleController.text} Created Success',
+                        message: '${_titleController.text} Update Success',
                         seconds: 2,
                       );
                     },
-                    error: (errorMesage) {
+                    error: (error) {
                       ShowToast.showToastErrorTop(
-                        message: errorMesage,
+                        message: error,
                       );
                     },
                   );
@@ -216,12 +241,12 @@ class _CreateProductBottomSheetState extends State<CreateProductBottomSheet> {
                         height: 50.h,
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
-                          color: ColorsDark.blueDark,
+                          color: Colors.white,
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: const Center(
                           child: CircularProgressIndicator(
-                            color: ColorsDark.white,
+                            color: ColorsDark.blueDark,
                           ),
                         ),
                       );
@@ -229,13 +254,13 @@ class _CreateProductBottomSheetState extends State<CreateProductBottomSheet> {
                     orElse: () {
                       return CustomButton(
                         onPressed: () {
-                          _validCreateProductButton(context);
+                          _validUpdateProduct(context);
                         },
                         backgroundColor: ColorsDark.white,
                         lastRadius: 20,
                         threeRadius: 20,
                         textColor: ColorsDark.blueDark,
-                        text: 'Create Product',
+                        text: 'Update Product',
                         width: MediaQuery.of(context).size.width,
                         height: 50.h,
                       );
@@ -243,7 +268,7 @@ class _CreateProductBottomSheetState extends State<CreateProductBottomSheet> {
                   );
                 },
               ),
-              SizedBox(height: 20.h)
+              SizedBox(height: 20.h),
             ],
           ),
         ),
@@ -251,38 +276,26 @@ class _CreateProductBottomSheetState extends State<CreateProductBottomSheet> {
     );
   }
 
-  void _validCreateProductButton(BuildContext context) {
-    final indexEmptyImage = context
-        .read<UploadImageCubit>()
-        .imageList
-        .indexWhere((e) => e.isNotEmpty);
+  void _validUpdateProduct(BuildContext context) {
+    print("walid => ${double.parse(categoryValueId!)}");
+    // if (fromKey.currentState!.validate()) {
+    //   //update category
 
-    if (fromKey.currentState!.validate() ||
-        indexEmptyImage == -1 ||
-        categoryName == null) {
-      if (indexEmptyImage == -1) {
-        ShowToast.showToastErrorTop(
-          message: context.translate(LangKeys.validPickImage),
-        );
-      } else if (categoryName == null) {
-        ShowToast.showToastErrorTop(
-          message: 'Please select your category',
-        );
-      } else {
-        // create new product
-
-        context.read<CreateProdcutBloc>().add(
-              CreateProdcutEvent.creatProduct(
-                body: CreateProductRequestBody(
-                  title: _titleController.text.trim(),
-                  description: _descriptionController.text.trim(),
-                  price: double.parse(_priceController.text.trim()),
-                  imageList: context.read<UploadImageCubit>().imageList,
-                  categoryId: catgeoryId ?? 0,
-                ),
-              ),
-            );
-      }
-    }
+    //   context.read<UpdateProductBloc>().add(
+    //         UpdateProductEvent.updateProduct(
+    //           body: UpdateProductRequestBody(
+    //             categoryId: double.parse(categoryValueId!),
+    //             title: _titleController.text.trim(),
+    //             description: _descriptionController.text.trim(),
+    //             price: double.parse(_priceController.text.trim()),
+    //             imageList:
+    //                 context.read<UploadImageCubit>().imageUpdateList.isEmpty
+    //                     ? widget.imageList
+    //                     : context.read<UploadImageCubit>().imageUpdateList,
+    //             productId: widget.productId,
+    //           ),
+    //         ),
+    //       );
+    // }
   }
 }

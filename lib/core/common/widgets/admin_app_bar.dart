@@ -1,7 +1,7 @@
-import 'text_app.dart';
-import '../../extensions/context_extensions.dart';
-import '../../style/fonts/font_family_helper.dart';
-import '../../style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/core/common/widgets/text_app.dart';
+import 'package:asroo_store/core/extensions/context_extension.dart';
+import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
+import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
@@ -23,8 +23,7 @@ class AdminAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: backgroundColor,
       centerTitle: true,
-      surfaceTintColor: Colors.transparent, 
-      // علشان لما بحرك ال ليست بيعمل لون خفيف ف الغيه 
+      surfaceTintColor: Colors.transparent,
       title: TextApp(
         text: title,
         theme: context.textStyle.copyWith(
@@ -44,8 +43,7 @@ class AdminAppBar extends StatelessWidget implements PreferredSizeWidget {
                 color: Colors.white,
               ),
             )
-          : const SizedBox.shrink() //  SizedBox.shrink() is used to hide the widget
-          //  اقل مساحه ,
+          : const SizedBox.shrink(),
     );
   }
 

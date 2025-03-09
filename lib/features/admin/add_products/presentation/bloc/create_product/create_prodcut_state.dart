@@ -1,4 +1,3 @@
-
 part of 'create_prodcut_bloc.dart';
 
 @freezed

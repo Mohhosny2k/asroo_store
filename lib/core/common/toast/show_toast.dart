@@ -3,12 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class ShowToast {
-  //factory ShowToast() => _instance;
   const ShowToast._();
- //  static final ShowToast _instance = ShowToast._();
 
   static void showToastErrorTop({
-   // required BuildContext context,
     required String message,
     int? seconds,
   }) =>
@@ -23,7 +20,6 @@ class ShowToast {
       );
 
   static void showToastSuccessTop({
-  //  required BuildContext context,
     required String message,
     int? seconds,
   }) =>

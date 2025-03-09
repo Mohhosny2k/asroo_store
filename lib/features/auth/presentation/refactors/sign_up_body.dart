@@ -1,6 +1,7 @@
+import 'package:asroo_store/core/extensions/context_extension.dart';
+
 import '../../../../core/common/animations/animate_do.dart';
 import '../../../../core/common/widgets/text_app.dart';
-import '../../../../core/extensions/context_extensions.dart';
 import '../widgets/auth_title_info.dart';
 import '../widgets/dark_and_lang_button.dart';
 import '../widgets/sign_up/sign_up_button.dart';

@@ -1,6 +1,7 @@
+import 'package:asroo_store/core/common/screens/no_network_screen.dart';
+
 import 'core/app/app_cubit/app_cubit.dart';
 import 'core/app/env.variables.dart';
-import 'core/common/screen/no_network_screen.dart';
 import 'core/di/injection_container.dart';
 import 'core/language/app_localizations_setup.dart';
 import 'core/routes/app_routes.dart';
@@ -80,7 +81,7 @@ class AsrooStoreApp extends StatelessWidget {
                 colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
                 useMaterial3: true,
               ),
-              home: const NoNetworkScreen(),
+              home: const NoNetWorkScreen(),
             );
           }
         });

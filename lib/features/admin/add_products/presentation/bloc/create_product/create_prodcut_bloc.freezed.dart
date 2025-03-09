@@ -72,9 +72,6 @@ class _$CreateProdcutEventCopyWithImpl<$Res, $Val extends CreateProdcutEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of CreateProdcutEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -91,9 +88,6 @@ class __$$StartedImplCopyWithImpl<$Res>
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CreateProdcutEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -200,8 +194,6 @@ class __$$NewCreateProductEventImplCopyWithImpl<$Res>
       $Res Function(_$NewCreateProductEventImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CreateProdcutEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -240,9 +232,7 @@ class _$NewCreateProductEventImpl implements NewCreateProductEvent {
   @override
   int get hashCode => Object.hash(runtimeType, body);
 
-  /// Create a copy of CreateProdcutEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$NewCreateProductEventImplCopyWith<_$NewCreateProductEventImpl>
@@ -318,10 +308,7 @@ abstract class NewCreateProductEvent implements CreateProdcutEvent {
       _$NewCreateProductEventImpl;
 
   CreateProductRequestBody get body;
-
-  /// Create a copy of CreateProdcutEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$NewCreateProductEventImplCopyWith<_$NewCreateProductEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -396,9 +383,6 @@ class _$CreateProdcutStateCopyWithImpl<$Res, $Val extends CreateProdcutState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of CreateProdcutState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -415,9 +399,6 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CreateProdcutState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -532,9 +513,6 @@ class __$$LoadingStateImplCopyWithImpl<$Res>
   __$$LoadingStateImplCopyWithImpl(
       _$LoadingStateImpl _value, $Res Function(_$LoadingStateImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CreateProdcutState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -649,9 +627,6 @@ class __$$SuccessStateImplCopyWithImpl<$Res>
   __$$SuccessStateImplCopyWithImpl(
       _$SuccessStateImpl _value, $Res Function(_$SuccessStateImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CreateProdcutState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -769,8 +744,6 @@ class __$$ErrorStateImplCopyWithImpl<$Res>
       _$ErrorStateImpl _value, $Res Function(_$ErrorStateImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CreateProdcutState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -809,9 +782,7 @@ class _$ErrorStateImpl implements ErrorState {
   @override
   int get hashCode => Object.hash(runtimeType, error);
 
-  /// Create a copy of CreateProdcutState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ErrorStateImplCopyWith<_$ErrorStateImpl> get copyWith =>
@@ -896,10 +867,7 @@ abstract class ErrorState implements CreateProdcutState {
   const factory ErrorState({required final String error}) = _$ErrorStateImpl;
 
   String get error;
-
-  /// Create a copy of CreateProdcutState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ErrorStateImplCopyWith<_$ErrorStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

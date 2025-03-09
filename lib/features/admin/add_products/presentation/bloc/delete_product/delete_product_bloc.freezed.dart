@@ -72,9 +72,6 @@ class _$DeleteProductEventCopyWithImpl<$Res, $Val extends DeleteProductEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of DeleteProductEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -91,9 +88,6 @@ class __$$StartedImplCopyWithImpl<$Res>
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of DeleteProductEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -199,8 +193,6 @@ class __$$RemoveProductEventImplCopyWithImpl<$Res>
       $Res Function(_$RemoveProductEventImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of DeleteProductEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -240,9 +232,7 @@ class _$RemoveProductEventImpl implements RemoveProductEvent {
   @override
   int get hashCode => Object.hash(runtimeType, productId);
 
-  /// Create a copy of DeleteProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$RemoveProductEventImplCopyWith<_$RemoveProductEventImpl> get copyWith =>
@@ -317,10 +307,7 @@ abstract class RemoveProductEvent implements DeleteProductEvent {
       _$RemoveProductEventImpl;
 
   String get productId;
-
-  /// Create a copy of DeleteProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$RemoveProductEventImplCopyWith<_$RemoveProductEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -395,9 +382,6 @@ class _$DeleteProductStateCopyWithImpl<$Res, $Val extends DeleteProductState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of DeleteProductState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -414,9 +398,6 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of DeleteProductState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -534,8 +515,6 @@ class __$$LoadingStateImplCopyWithImpl<$Res>
       _$LoadingStateImpl _value, $Res Function(_$LoadingStateImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of DeleteProductState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -575,9 +554,7 @@ class _$LoadingStateImpl implements LoadingState {
   @override
   int get hashCode => Object.hash(runtimeType, productId);
 
-  /// Create a copy of DeleteProductState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$LoadingStateImplCopyWith<_$LoadingStateImpl> get copyWith =>
@@ -663,10 +640,7 @@ abstract class LoadingState implements DeleteProductState {
       _$LoadingStateImpl;
 
   String get productId;
-
-  /// Create a copy of DeleteProductState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$LoadingStateImplCopyWith<_$LoadingStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -685,9 +659,6 @@ class __$$SuccessStateImplCopyWithImpl<$Res>
   __$$SuccessStateImplCopyWithImpl(
       _$SuccessStateImpl _value, $Res Function(_$SuccessStateImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of DeleteProductState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -805,8 +776,6 @@ class __$$ErrorStateImplCopyWithImpl<$Res>
       _$ErrorStateImpl _value, $Res Function(_$ErrorStateImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of DeleteProductState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -845,9 +814,7 @@ class _$ErrorStateImpl implements ErrorState {
   @override
   int get hashCode => Object.hash(runtimeType, error);
 
-  /// Create a copy of DeleteProductState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ErrorStateImplCopyWith<_$ErrorStateImpl> get copyWith =>
@@ -932,10 +899,7 @@ abstract class ErrorState implements DeleteProductState {
   const factory ErrorState({required final String error}) = _$ErrorStateImpl;
 
   String get error;
-
-  /// Create a copy of DeleteProductState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ErrorStateImplCopyWith<_$ErrorStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

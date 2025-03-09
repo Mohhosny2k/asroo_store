@@ -1,19 +1,13 @@
-import '../../../../../../core/app/upload_image/cubit/upload_image_cubit.dart';
-import '../../../../../../core/common/toast/show_toast.dart';
-import '../../../../../../core/di/string_exetension.dart';
-import '../../../../../../core/extensions/context_extensions.dart';
-import '../../../../../../core/language/lang_keys.dart';
+import 'package:asroo_store/core/app/upload_image/cubit/upload_image_cubit.dart';
+import 'package:asroo_store/core/common/toast/show_toast.dart';
+import 'package:asroo_store/core/extensions/context_extension.dart';
+import 'package:asroo_store/core/language/lang_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class UpdateProductImages extends StatelessWidget {
-  const UpdateProductImages({
-    required this.imageList,
-    super.key,
-  });
-
-  final List<String> imageList;
+class CreateProductImages extends StatelessWidget {
+  const CreateProductImages({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +15,7 @@ class UpdateProductImages extends StatelessWidget {
       shrinkWrap: true,
       padding: EdgeInsets.zero,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: imageList.length,
+      itemCount: 3,
       itemBuilder: (context, index) {
         return BlocConsumer<UploadImageCubit, UploadImageState>(
           listener: (context, state) {
@@ -41,7 +35,7 @@ class UpdateProductImages extends StatelessWidget {
           builder: (context, state) {
             return state.maybeWhen(
               loadingList: (indexId) {
-                if (index == indexId) {
+                if (indexId == index) {
                   return Container(
                     height: 90.h,
                     width: MediaQuery.of(context).size.width,
@@ -56,21 +50,18 @@ class UpdateProductImages extends StatelessWidget {
                     ),
                   );
                 }
-                return UpdateSelectedImageWidget(
-                  imageList: imageList,
+                return SeletetYourProductImage(
                   index: index,
                   onTap: () {},
                 );
               },
               orElse: () {
-                return UpdateSelectedImageWidget(
-                  imageList: imageList,
+                return SeletetYourProductImage(
                   index: index,
                   onTap: () {
-                    context.read<UploadImageCubit>().uploadUpdateImageList(
-                          indexId: index,
-                          productImageList: imageList,
-                        );
+                    context
+                        .read<UploadImageCubit>()
+                        .uploadImageList(indexId: index);
                   },
                 );
               },
@@ -83,26 +74,20 @@ class UpdateProductImages extends StatelessWidget {
   }
 }
 
-class UpdateSelectedImageWidget extends StatelessWidget {
-  const UpdateSelectedImageWidget({
-    required this.imageList,
+class SeletetYourProductImage extends StatelessWidget {
+  const SeletetYourProductImage({
     required this.index,
     required this.onTap,
     super.key,
   });
 
-  final List<String> imageList;
   final int index;
   final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Stack(
-        children: [
-          // Image
-          Container(
+    return context.read<UploadImageCubit>().imageList[index].isNotEmpty
+        ? Container(
             height: 90.h,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
@@ -110,28 +95,26 @@ class UpdateSelectedImageWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(15),
               image: DecorationImage(
                 fit: BoxFit.fill,
-                image: NetworkImage(imageList[index].imageProductFormate()),
+                image: NetworkImage(
+                    context.read<UploadImageCubit>().imageList[index]),
               ),
             ),
-          ),
-          //Icon Button
-          Container(
-            height: 90.h,
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.3),
-              borderRadius: BorderRadius.circular(15),
-            ),
-            child: const Center(
-              child: Icon(
+          )
+        : InkWell(
+            onTap: onTap,
+            child: Container(
+              height: 90.h,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                color: Colors.grey.withOpacity(0.8),
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: const Icon(
                 Icons.add_a_photo_outlined,
                 size: 50,
                 color: Colors.white,
               ),
             ),
-          ),
-        ],
-      ),
-    );
+          );
   }
 }

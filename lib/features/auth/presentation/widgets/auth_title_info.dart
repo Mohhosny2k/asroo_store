@@ -1,9 +1,9 @@
 import '../../../../core/common/animations/animate_do.dart';
 import '../../../../core/common/widgets/text_app.dart';
-import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/style/fonts/font_weight_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:asroo_store/core/extensions/context_extension.dart';
 
 class AuthTitleInfo extends StatelessWidget {
   final String title;

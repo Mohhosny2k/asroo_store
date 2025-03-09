@@ -1,4 +1,3 @@
-
 part of 'update_product_bloc.dart';
 
 @freezed
