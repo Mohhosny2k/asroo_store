@@ -1,7 +1,7 @@
 import 'package:asroo_store/core/common/loading/empty_screen.dart';
 import 'package:asroo_store/features/admin/users/presentation/bloc/get_all_users/get_all_users_bloc.dart';
-import 'package:asroo_store/features/admin/users/presentation/widgets/search_for_users.dart';
-import 'package:asroo_store/features/admin/users/presentation/widgets/table_for_users.dart';
+import 'package:asroo_store/features/admin/users/presentation/widget/search_for_users.dart';
+import 'package:asroo_store/features/admin/users/presentation/widget/table_for_users.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

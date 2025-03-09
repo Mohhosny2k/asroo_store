@@ -1,3 +1,8 @@
+import 'package:asroo_store/features/admin/users/data/data_sources/users_data_source.dart';
+import 'package:asroo_store/features/admin/users/data/repos/users_repo.dart';
+import 'package:asroo_store/features/admin/users/presentation/bloc/delete_user/delete_user_bloc.dart';
+import 'package:asroo_store/features/admin/users/presentation/bloc/get_all_users/get_all_users_bloc.dart';
+
 import '../../features/admin/add_products/data/data_source/products_admin_data_source.dart';
 import '../../features/admin/add_products/data/repos/products_admin_repo.dart';
 import '../../features/admin/add_products/presentation/bloc/create_product/create_prodcut_bloc.dart';
@@ -108,13 +113,13 @@ Future<void> _initProductsAdmin() async {
     ..registerFactory(() => UpdateProductBloc(sl()));
 }
 
-// Future<void> _initUsersAdmin() async {
-//   sl
-//     ..registerLazySingleton(() => UsersRepo(sl()))
-//     ..registerLazySingleton(() => UserDataSource(sl()))
-//     ..registerFactory(() => GetAllUsersBloc(sl()))
-//     ..registerFactory(() => DeleteUserBloc(sl()));
-// }
+Future<void> _initUsersAdmin() async {
+  sl
+    ..registerLazySingleton(() => UsersRepo(sl()))
+    ..registerLazySingleton(() => UserDataSource(sl()))
+    ..registerFactory(() => GetAllUsersBloc(sl()))
+    ..registerFactory(() => DeleteUserBloc(sl()));
+}
 
 // Future<void> _initAddNotification() async {
 //   sl
