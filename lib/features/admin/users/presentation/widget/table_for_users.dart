@@ -1,11 +1,11 @@
-import 'package:asroo_store/core/common/widgets/text_app.dart';
-import 'package:asroo_store/core/extensions/context_extensions.dart';
-import 'package:asroo_store/core/style/colors/colors_dark.dart';
-import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
-import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
-import 'package:asroo_store/features/admin/users/data/models/get_all_users_response.dart';
-import 'package:asroo_store/features/admin/users/presentation/widget/delete_user_icon.dart';
-import 'package:asroo_store/features/admin/users/presentation/widget/table_cell_title_widget.dart';
+import '../../../../../core/common/widgets/text_app.dart';
+import '../../../../../core/extensions/context_extensions.dart';
+import '../../../../../core/style/colors/colors_dark.dart';
+import '../../../../../core/style/fonts/font_family_helper.dart';
+import '../../../../../core/style/fonts/font_weight_helper.dart';
+import '../../data/models/get_all_users_response.dart';
+import 'delete_user_icon.dart';
+import 'table_cell_title_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

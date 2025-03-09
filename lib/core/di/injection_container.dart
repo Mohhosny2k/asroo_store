@@ -1,7 +1,7 @@
-import 'package:asroo_store/features/admin/users/data/data_sources/users_data_source.dart';
-import 'package:asroo_store/features/admin/users/data/repos/users_repo.dart';
-import 'package:asroo_store/features/admin/users/presentation/bloc/delete_user/delete_user_bloc.dart';
-import 'package:asroo_store/features/admin/users/presentation/bloc/get_all_users/get_all_users_bloc.dart';
+import '../../features/admin/users/data/data_sources/users_data_source.dart';
+import '../../features/admin/users/data/repos/users_repo.dart';
+import '../../features/admin/users/presentation/bloc/delete_user/delete_user_bloc.dart';
+import '../../features/admin/users/presentation/bloc/get_all_users/get_all_users_bloc.dart';
 
 import '../../features/admin/add_products/data/data_source/products_admin_data_source.dart';
 import '../../features/admin/add_products/data/repos/products_admin_repo.dart';

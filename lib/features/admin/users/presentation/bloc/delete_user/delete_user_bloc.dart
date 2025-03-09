@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:asroo_store/features/admin/users/data/repos/users_repo.dart';
+import '../../../data/repos/users_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'delete_user_event.dart';

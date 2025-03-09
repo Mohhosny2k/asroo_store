@@ -1,8 +1,8 @@
 
-import 'package:asroo_store/core/service/graphql/api_result.dart';
-import 'package:asroo_store/core/utils/app_strings.dart';
-import 'package:asroo_store/features/admin/users/data/data_sources/users_data_source.dart';
-import 'package:asroo_store/features/admin/users/data/models/get_all_users_response.dart';
+import '../../../../../core/service/graphql/api_result.dart';
+import '../../../../../core/utils/app_strings.dart';
+import '../data_sources/users_data_source.dart';
+import '../models/get_all_users_response.dart';
 
 class UsersRepo {
   UsersRepo(this._dataSource);
