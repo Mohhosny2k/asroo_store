@@ -13,7 +13,7 @@ class FirebaseCloudMessaging {
   Future<void> sendNotification() async {
  try{
      final response = await Dio().post<dynamic>(
-        '${EnvVariable.instance.notificationBaseUrl}',
+        EnvVariable.instance.notificationBaseUrl,
         options: Options(
             contentType: Headers.jsonContentType,
             responseType: ResponseType.json,
@@ -27,7 +27,7 @@ class FirebaseCloudMessaging {
 
             
             ) , data: {
-              'to': '<Device FCM token>',
+              'to': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcyLCJpYXQiOjE3MzgyMjk4NzAsImV4cCI6MTczOTk1Nzg3MH0.EXOUSBqWiK_myjrJ1vV6WWMaMGGzUuJo4KTMKKLTG9M',
               'notification': {
                 'title': 'Check this Mobile {title}',
                 'body': 'Rich Notification {body}',
