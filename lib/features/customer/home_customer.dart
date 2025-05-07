@@ -1,6 +1,6 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:asroo_store/core/extensions/context_extension.dart';
+import '../../core/extensions/context_extension.dart';
 
 class HomeCustomerScreen extends StatelessWidget {
   const HomeCustomerScreen({super.key});

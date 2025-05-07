@@ -1,4 +1,4 @@
-import 'package:asroo_store/core/common/screens/no_network_screen.dart';
+import 'core/common/screens/no_network_screen.dart';
 
 import 'core/app/app_cubit/app_cubit.dart';
 import 'core/app/env.variables.dart';

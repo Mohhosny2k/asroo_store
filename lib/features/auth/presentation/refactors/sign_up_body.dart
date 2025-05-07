@@ -1,4 +1,4 @@
-import 'package:asroo_store/core/extensions/context_extension.dart';
+import '../../../../core/extensions/context_extension.dart';
 
 import '../../../../core/common/animations/animate_do.dart';
 import '../../../../core/common/widgets/text_app.dart';

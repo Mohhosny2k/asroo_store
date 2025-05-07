@@ -1,6 +1,6 @@
 import '../../../../../core/common/animations/animate_do.dart';
 import '../../../../../core/common/widgets/custom_text_field.dart';
-import 'package:asroo_store/core/extensions/context_extension.dart';
+import '../../../../../core/extensions/context_extension.dart';
 import '../../bloc/auth_bloc.dart';
 import '../../../../../core/language/lang_keys.dart';
 import '../../../../../core/utils/app_regex.dart';

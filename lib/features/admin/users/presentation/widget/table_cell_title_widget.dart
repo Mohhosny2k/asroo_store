@@ -1,5 +1,5 @@
 import '../../../../../core/common/widgets/text_app.dart';
-import 'package:asroo_store/core/extensions/context_extension.dart';
+import '../../../../../core/extensions/context_extension.dart';
 import '../../../../../core/style/fonts/font_family_helper.dart';
 import '../../../../../core/style/fonts/font_weight_helper.dart';
 import 'package:flutter/material.dart';

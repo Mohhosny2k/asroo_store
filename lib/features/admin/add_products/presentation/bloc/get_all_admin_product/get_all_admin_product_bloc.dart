@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'package:asroo_store/features/admin/add_products/data/models/get_all_product_reponse.dart';
-import 'package:asroo_store/features/admin/add_products/data/repos/products_admin_repo.dart';
+import '../../../data/models/get_all_product_reponse.dart';
+import '../../../data/repos/products_admin_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

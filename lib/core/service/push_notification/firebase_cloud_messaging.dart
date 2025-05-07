@@ -1,4 +1,4 @@
-import 'package:asroo_store/core/app/env.variables.dart';
+import '../../app/env.variables.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 

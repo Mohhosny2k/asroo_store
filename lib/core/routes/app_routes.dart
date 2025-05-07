@@ -1,4 +1,4 @@
-import 'package:asroo_store/core/common/screens/under_build_screen.dart';
+import '../common/screens/under_build_screen.dart';
 import '../app/upload_image/cubit/upload_image_cubit.dart';
 import '../di/injection_container.dart';
 import '../../features/admin/home_admin/presentation/screen/home_admin_screen.dart';
