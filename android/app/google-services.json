@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "654396066033",
+    "project_id": "asroostore-57dce",
+    "storage_bucket": "asroostore-57dce.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654396066033:android:2475d4030d936118cc0150",
+        "android_client_info": {
+          "package_name": "com.example.asroo_store"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNid_h4ebw0_bJyH0Wre1zQxcx83JgYBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
